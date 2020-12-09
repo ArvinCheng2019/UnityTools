@@ -12,11 +12,13 @@ namespace Arvin
         {
             var sound = ScriptableHelper.GetSoundOptimization();
             sound.Run();
+            EditorUtility.SetDirty(sound);
         }
 
         [MenuItem("Assets/Arvin/声音/添加自定义列表")]
         public static void AddToList()
         {
+            var sound = ScriptableHelper.GetSoundOptimization();
             UnrealBar.ShowUnrealBar();
             var objs = Selection.objects;
             foreach (var obj in objs)
@@ -24,10 +26,11 @@ namespace Arvin
                 if (obj is AudioClip)
                 {
                     string path = AssetDatabase.GetAssetPath(obj);
-                    var sound = ScriptableHelper.GetSoundOptimization();
                     sound.AddSelfRule(path);
                 }
             }
+            
+            EditorUtility.SetDirty(sound);
         }
 
         [MenuItem("Assets/Arvin/声音/从自定义列表移除")]
@@ -44,6 +47,7 @@ namespace Arvin
                     sound.RemoveSelfRule(path);
                 }
             }
+            EditorUtility.SetDirty(sound);
         }
     }
 }

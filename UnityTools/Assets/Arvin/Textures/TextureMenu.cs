@@ -23,6 +23,7 @@ namespace Arvin
 
             string path = AssetDatabase.GetAssetPath(obj);
             texture.AddTexturePath(path);
+            EditorUtility.SetDirty(texture);
         }
 
         [MenuItem("Assets/Arvin/图片优化/从优化列表删除")]
@@ -39,6 +40,7 @@ namespace Arvin
 
             string path = AssetDatabase.GetAssetPath(obj);
             texture.RemoveTextures(path);
+            EditorUtility.SetDirty(texture);
         }
 
         [MenuItem("Assets/Arvin/图片优化/添加到自定义处理")]
@@ -68,6 +70,7 @@ namespace Arvin
                 string path = AssetDatabase.GetAssetPath(obj);
                 texture.AddResToSelfCompress(path);
             }
+            EditorUtility.SetDirty(texture);
         }
 
         [MenuItem("Assets/Arvin/图片优化/从自定义列表移除")]
@@ -81,6 +84,7 @@ namespace Arvin
                 string path = AssetDatabase.GetAssetPath(obj);
                 texture.DelResFromSelfCompress(path);
             }
+            EditorUtility.SetDirty(texture);
         }
 
         [MenuItem("Arvin/图片/执行图片优化")]
@@ -88,6 +92,7 @@ namespace Arvin
         {
             var texture = ScriptableHelper.GetTextureOptimization();
             texture.Run();
+            EditorUtility.SetDirty(texture);
         }
 
         [MenuItem("Arvin /图片/图片查看器 &T")]

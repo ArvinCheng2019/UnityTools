@@ -55,7 +55,7 @@ namespace Arvin
             {
                 TextureOptimizations.Add(new TextureFolderData()
                 {
-                    Compression = TextureImporterFormat.ASTC_RGBA_6x6,
+                    Compression = TextureImporterFormat.ASTC_RGB_6x6,
                     Path = path,
                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
                 });
@@ -170,6 +170,6 @@ namespace Arvin
         public OptimizationPlatform Platform = OptimizationPlatform.Android_iOS;
 
         //[LabelText("压缩格式")] 
-        public TextureImporterFormat Compression = TextureImporterFormat.ASTC_RGBA_6x6;
+        public TextureImporterFormat Compression = TextureImporterFormat.ASTC_RGB_6x6;
     }
 }
