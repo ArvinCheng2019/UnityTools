@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff922f2ad38a44719e13758738e162c, type: 3}
-  m_Name: TextureOptimization
+  m_Script: {fileID: 11500000, guid: c083e6c8eee7f4db08e744a7d5779a1d, type: 3}
+  m_Name: SoundOptimization
   m_EditorClassIdentifier: 
-  TextureOptimizations: []
-  UseSelfCompress: []
+  SelfRules: []
+  SoundRules: []

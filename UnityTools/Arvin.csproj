@@ -58,8 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Arvin\Audio\AudioMenu.cs" />
      <Compile Include="Assets\Arvin\Audio\Optimization\SoundOptimization.cs" />
-     <Compile Include="Assets\Arvin\ScriptableHelper.cs" />
+     <Compile Include="Assets\Arvin\Helper\ScriptableHelper.cs" />
+     <Compile Include="Assets\Arvin\Helper\UnrealBar.cs" />
      <Compile Include="Assets\Arvin\Textures\Optimization\TextureOptimization.cs" />
      <Compile Include="Assets\Arvin\Textures\TextureMenu.cs" />
      <Compile Include="Assets\Arvin\Textures\Viewer\Editor\Data\EnumDefine.cs" />

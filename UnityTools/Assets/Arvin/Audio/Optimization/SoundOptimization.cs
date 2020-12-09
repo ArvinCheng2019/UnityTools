@@ -3,16 +3,72 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu]
 public class SoundOptimization : ScriptableObject
 {
-    [Tooltip("对中长度音效音乐，使用Streaming + Vorbis 。 对短音效，使用Decompress On Load + ADPCM")]
-    public List<AudioClip> SelfRules = new List<AudioClip>();
-
+    public List<string> SelfRules = new List<string>();
     public List<AudioRules> SoundRules = new List<AudioRules>();
-
-    void Run()
+    
+    public void AddSelfRule(string path)
     {
+        if (SelfRules.Contains(path))
+        {
+            return;
+        }
+
+        SelfRules.Add(path);
+    }
+
+    public void RemoveSelfRule(string path)
+    {
+        if (!SelfRules.Contains(path))
+        {
+            return;
+        }
+
+        SelfRules.Remove(path);
+    }
+
+    public void CreateDefaultRule()
+    {
+        SoundRules.Add( new AudioRules()
+        {
+            length = 5,
+            start =  0,
+            Setting =  new AudioRuleSetting()
+            {
+                forceToMono = true,
+                Ambisonic =  false,
+                loadBackground =  false,
+                loadType = AudioClipLoadType.DecompressOnLoad,
+                compression = AudioCompressionFormat.ADPCM,
+                sampleRate = AudioSampleRateSetting.PreserveSampleRate,
+                Rate = SampleRate.HZ_11025
+            },
+        });
+        
+        SoundRules.Add( new AudioRules()
+        {
+            length = 100000,
+            start =  5,
+            Setting =  new AudioRuleSetting()
+            {
+                forceToMono = true,
+                Ambisonic =  false,
+                loadBackground =  false,
+                loadType = AudioClipLoadType.Streaming,
+                compression = AudioCompressionFormat.Vorbis,
+                sampleRate = AudioSampleRateSetting.OverrideSampleRate,
+                Rate = SampleRate.HZ_8000
+            },
+        });
+    }
+    public void Run()
+    {
+        if (SoundRules.Count == 0)
+        {
+            CreateDefaultRule();
+        }
+        
         string[] guids = AssetDatabase.FindAssets("t:AudioClip");
         int index = 0, length = guids.Length;
         EditorUtility.DisplayProgressBar("正在处理", $"正在处理声音文件 {index}/{length}", 0);
@@ -34,7 +90,6 @@ public class SoundOptimization : ScriptableObject
                 {
                     return true;
                 }
-
                 return false;
             });
 
@@ -53,8 +108,15 @@ public class SoundOptimization : ScriptableObject
 
     private void ChangeSound(string clipPath, AudioRuleSetting setting)
     {
-        AudioImporter audioImporter = (AudioImporter) AudioImporter.GetAtPath(clipPath);
+        AudioImporter audioImporter = (AudioImporter) AssetImporter.GetAtPath(clipPath);
         audioImporter.forceToMono = setting.forceToMono;
+        if (setting.forceToMono )
+        {
+            var serializedObject = new SerializedObject(audioImporter);
+            var normalize = serializedObject.FindProperty("m_Normalize");
+            normalize.boolValue = true;
+            serializedObject.ApplyModifiedProperties();
+        }
         audioImporter.ambisonic = setting.Ambisonic;
         audioImporter.loadInBackground = setting.loadBackground;
 
@@ -89,19 +151,8 @@ public class SoundOptimization : ScriptableObject
 
     private bool IsSelfRule(string guid)
     {
-        return false;
-        // bool isFound = false;
-        // foreach (var clip in SelfRules)
-        // {
-        //     string tmp = clip.GetGUID();
-        //     if (tmp == guid)
-        //     {
-        //         isFound = true;
-        //         break;
-        //     }
-        // }
-        //
-        // return isFound;
+        string path = AssetDatabase.GUIDToAssetPath(guid);
+        return SelfRules.Contains(path);
     }
 }
 
@@ -130,7 +181,7 @@ public class AudioRuleSetting
 
     public AudioSampleRateSetting sampleRate = AudioSampleRateSetting.PreserveSampleRate;
 
-  //  [LabelText("采样率设置"), ShowIf("sampleRate", AudioSampleRateSetting.OverrideSampleRate)]
+    //  [LabelText("采样率设置"), ShowIf("sampleRate", AudioSampleRateSetting.OverrideSampleRate)]
     public SampleRate Rate = SampleRate.HZ_8000;
 }
 

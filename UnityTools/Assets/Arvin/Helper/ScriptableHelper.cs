@@ -8,7 +8,7 @@ namespace Arvin
     {
         private static string basePath = Application.dataPath + "/Scriptables/";
 
-        private static void checkFolder()
+        private static void existsDirecttory()
         {
             if (Directory.Exists(basePath))
             {
@@ -18,10 +18,15 @@ namespace Arvin
             Directory.CreateDirectory(basePath);
         }
 
+        private static string getFilePath(string fileName)
+        {
+            existsDirecttory();
+            return $"Assets/Scriptables/{fileName}";
+        }
+
         public static TextureOptimization GetTextureOptimization()
         {
-            checkFolder();
-            string file =   "Assets/Scriptables/TextureOptimization.asset";
+            string file = getFilePath("TextureOptimization.asset");
             var importInfo = AssetDatabase.LoadAssetAtPath<TextureOptimization>(file);
             if (importInfo == null)
             {
@@ -35,8 +40,7 @@ namespace Arvin
 
         public static SoundOptimization GetSoundOptimization()
         {
-            checkFolder();
-            string file = "Assets/Scriptables/SoundOptimization.asset";
+            string file = getFilePath("SoundOptimization.asset");
             var importInfo = AssetDatabase.LoadAssetAtPath<SoundOptimization>(file);
             if (importInfo == null)
             {
