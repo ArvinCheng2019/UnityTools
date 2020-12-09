@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff922f2ad38a44719e13758738e162c, type: 3}
   m_Name: TextureOptimization
   m_EditorClassIdentifier: 
-  TextureOptimizations: []
+  TextureOptimizations:
+  - Path: Assets/UI/ActivityRank
+    Platform: 3
+    Compression: 50
   UseSelfCompress: []
