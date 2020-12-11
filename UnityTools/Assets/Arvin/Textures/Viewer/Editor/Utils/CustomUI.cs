@@ -15,7 +15,7 @@ namespace TextureTool
 
         public static void DisplayProgressLoadTexture()
         {
-            EditorUtility.DisplayProgressBar(ToolConfig.ProgressTitle, "テクスチャ収集中", 0f);
+            EditorUtility.DisplayProgressBar(ToolConfig.ProgressTitle, "正在收集图片", 0f);
         }
     }
 }
