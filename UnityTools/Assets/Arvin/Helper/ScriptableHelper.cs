@@ -38,6 +38,20 @@ namespace Arvin
             return importInfo;
         }
 
+        public static SelfRuleRes GetSelfRuleRes()
+        {
+            string file = getFilePath("SelfRuleRes.asset");
+            var importInfo = AssetDatabase.LoadAssetAtPath<SelfRuleRes>(file);
+            if (importInfo == null)
+            {
+                importInfo = ScriptableObject.CreateInstance<SelfRuleRes>();
+                AssetDatabase.CreateAsset(importInfo, file);
+                AssetDatabase.SaveAssets();
+            }
+
+            return importInfo;
+        }
+
         public static SoundOptimization GetSoundOptimization()
         {
             string file = getFilePath("SoundOptimization.asset");

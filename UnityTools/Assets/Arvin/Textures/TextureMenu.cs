@@ -8,21 +8,35 @@ namespace Arvin
 {
     public class TextureMenu : EditorWindow
     {
-        [MenuItem("Assets/Arvin/图片优化/添加到统一优化列表")]
+        [MenuItem("Assets/Arvin/图片优化/添加到优化列表")]
         private static void AddFolderToList()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
             UnrealBar.ShowUnrealBar();
-            var obj = Selection.activeObject;
-            var type = obj.GetType();
-            if (type != typeof(DefaultAsset))
+            var objs = Selection.objects;
+            bool isAllReady = true;
+            foreach (var obj in objs)
             {
-                EditorUtility.DisplayDialog("请选择文件夹", "这个优化不针对单个文件，只针对文件夹", "了解");
+                var type = obj.GetType();
+                if (type != typeof(DefaultAsset))
+                {
+                    EditorUtility.DisplayDialog("请选择文件夹", "这个优化不针对单个文件，只针对文件夹", "了解");
+                    isAllReady = false;
+                    break;
+                }
+            }
+
+            if (!isAllReady)
+            {
                 return;
             }
 
-            string path = AssetDatabase.GetAssetPath(obj);
-            texture.AddTexturePath(path);
+            foreach (var obj in objs)
+            {
+                string path = AssetDatabase.GetAssetPath(obj);
+                texture.AddTexturePath(path);
+            }
+
             EditorUtility.SetDirty(texture);
         }
 
@@ -43,10 +57,10 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Assets/Arvin/图片优化/添加到自定义处理")]
+        [MenuItem("Assets/Arvin/自定义/添加到自定义处理")]
         private static void AddToSelfCompress()
         {
-            var texture = ScriptableHelper.GetTextureOptimization();
+            var selfRule = ScriptableHelper.GetSelfRuleRes();
             UnrealBar.ShowUnrealBar();
             var objs = Selection.objects;
             bool isReturn = false;
@@ -68,23 +82,25 @@ namespace Arvin
             foreach (var obj in objs)
             {
                 string path = AssetDatabase.GetAssetPath(obj);
-                texture.AddResToSelfCompress(path);
+                selfRule.AddToSelfRule(path,obj);
             }
-            EditorUtility.SetDirty(texture);
+
+            EditorUtility.SetDirty(selfRule);
         }
 
-        [MenuItem("Assets/Arvin/图片优化/从自定义列表移除")]
+        [MenuItem("Assets/Arvin/自定义/从自定义列表移除")]
         private static void DelFromSelfCompress()
         {
-            var texture = ScriptableHelper.GetTextureOptimization();
+            var selfRule = ScriptableHelper.GetSelfRuleRes();
             UnrealBar.ShowUnrealBar();
             var objs = Selection.objects;
             foreach (var obj in objs)
             {
                 string path = AssetDatabase.GetAssetPath(obj);
-                texture.DelResFromSelfCompress(path);
+                selfRule.RemoveSelfRule(path,obj);
             }
-            EditorUtility.SetDirty(texture);
+
+            EditorUtility.SetDirty(selfRule);
         }
 
         [MenuItem("Arvin/图片/执行图片优化")]
