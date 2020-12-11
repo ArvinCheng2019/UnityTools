@@ -28,15 +28,9 @@ namespace Arvin
             {
                 TextureOptimizations.Add(new TextureFolderData()
                 {
-#if UNITY_2019_1_OR_NEWER
-                    Compression = TextureImporterFormat.ASTC_RGB_6x6,
-                    Path = path,
-                    Platform = TextureFolderData.OptimizationPlatform.Android_iOS
-#else
                     Compression = TextureImporterFormat.ASTC_RGBA_6x6,
-                    Path = path,
-                    Platform = TextureFolderData.OptimizationPlatform.Android_iOS
-#endif
+                     Path = path,
+                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
                 });
             }
         }

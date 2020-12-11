@@ -52,6 +52,20 @@ namespace Arvin
             return importInfo;
         }
 
+        public static GameObjectOptimizastion GetGameObjectOptimizastion()
+        {
+            string file = getFilePath("GameObjectOptimizastion.asset");
+            var importInfo = AssetDatabase.LoadAssetAtPath<GameObjectOptimizastion>(file);
+            if (importInfo == null)
+            {
+                importInfo = ScriptableObject.CreateInstance<GameObjectOptimizastion>();
+                AssetDatabase.CreateAsset(importInfo, file);
+                AssetDatabase.SaveAssets();
+            }
+
+            return importInfo;
+        }
+
         public static SoundOptimization GetSoundOptimization()
         {
             string file = getFilePath("SoundOptimization.asset");
