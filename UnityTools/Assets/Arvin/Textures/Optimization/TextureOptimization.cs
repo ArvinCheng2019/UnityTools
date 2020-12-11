@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,42 +8,13 @@ namespace Arvin
     public class TextureOptimization : ScriptableObject
     {
         public List<TextureFolderData> TextureOptimizations = new List<TextureFolderData>();
-        public List<string> UseSelfCompress = new List<string>();
-        
         public bool DisableMinMap = true;
 
-        /// <summary>
-        /// 添加到自定义列表，使用自定义的方式压缩图片，不统一处理
-        /// </summary>
-        /// <param name="path"></param>
-        public void AddResToSelfCompress(string path)
+        private SelfRuleRes selfRuleRes;
+
+        public void OnEnable()
         {
-            if (UseSelfCompress.Contains(path))
-            {
-                return;
-            }
-
-            UseSelfCompress.Add(path);
-        }
-
-        /// <summary>
-        ///  从自定义列表里删除，使用统一的处理方式
-        /// </summary>
-        /// <param name="path"></param>
-        public void DelResFromSelfCompress(string path)
-        {
-            if (!UseSelfCompress.Contains(path))
-            {
-                return;
-            }
-
-            UseSelfCompress.Remove(path);
-        }
-
-        private bool isSelfCompressRes(string path)
-        {
-            var item = UseSelfCompress.Find(value => value.Equals(path));
-            return item != null;
+            selfRuleRes = ScriptableHelper.GetSelfRuleRes();
         }
 
         /// <summary>
@@ -56,15 +28,15 @@ namespace Arvin
             {
                 TextureOptimizations.Add(new TextureFolderData()
                 {
-                    #if UNITY_2018
-                    Compression = TextureImporterFormat.ASTC_RGBA_6x6,
-                    Path = path,
-                    Platform = TextureFolderData.OptimizationPlatform.Android_iOS
-                    #elif  UNITY_2019
+#if UNITY_2019_1_OR_NEWER
                     Compression = TextureImporterFormat.ASTC_RGB_6x6,
                     Path = path,
                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
-                    #endif    
+#else
+                    Compression = TextureImporterFormat.ASTC_RGBA_6x6,
+                    Path = path,
+                    Platform = TextureFolderData.OptimizationPlatform.Android_iOS
+#endif
                 });
             }
         }
@@ -94,7 +66,7 @@ namespace Arvin
                 foreach (var guid in guids)
                 {
                     string path = AssetDatabase.GUIDToAssetPath(guid);
-                    if (isSelfCompressRes(path))
+                    if (selfRuleRes.IsResInSelfRule(path))
                     {
                         continue;
                     }

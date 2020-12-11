@@ -24,14 +24,6 @@ namespace Arvin
 
         public void AddToSelfRule(string path, object res)
         {
-            // if (res is DefaultAsset)
-            // {
-            //     if (!usedSelfRules_Directory.Contains(path))
-            //     {
-            //         usedSelfRules_Directory.Add(path);
-            //     }
-            // }
-            // else
             if (res is Texture || res is Texture2D)
             {
                 if (!usedSelfRules_Texture.Contains(path))
@@ -57,14 +49,6 @@ namespace Arvin
 
         public void RemoveSelfRule(string path, object res)
         {
-            // if (res is DefaultAsset)
-            // {
-            //     if (usedSelfRules_Directory.Contains(path))
-            //     {
-            //         usedSelfRules_Directory.Remove(path);
-            //     }
-            // }
-            // else 
             if (res is Texture || res is Texture2D)
             {
                 if (usedSelfRules_Texture.Contains(path))
@@ -86,6 +70,25 @@ namespace Arvin
                     usedSelfRules_AudioClip.Remove(path);
                 }
             }
+        }
+
+        public bool IsResInSelfRule( string path)
+        {
+            if ( usedSelfRules_Prefab.Contains(path))
+            {
+                return true;
+            }
+
+            if ( usedSelfRules_Texture.Contains( path))
+            {
+                return true;
+            }
+
+            if ( usedSelfRules_AudioClip.Contains( path))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

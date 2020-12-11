@@ -16,4 +16,4 @@ MonoBehaviour:
   - Path: Assets/UI/ActivityRank
     Platform: 3
     Compression: 50
-  UseSelfCompress: []
+  DisableMinMap: 1

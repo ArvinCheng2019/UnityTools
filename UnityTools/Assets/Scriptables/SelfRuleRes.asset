@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usedSelfRules_Texture:
   - Assets/UI/ActivityRank/112@2x.png
+  - "Assets/UI/ActivityRank/-e-\u77E9\u5F62 4 \u62F7\u8D1D 3.png"
   usedSelfRules_AudioClip:
   - Assets/Audio/Sounds/S_AmazingApplaud2.mp3
+  - Assets/Audio/Sounds/S_BallCollision3.mp3
   usedSelfRules_Prefab: []
-  usedSelfRules_Directory:
-  - Assets/UI/ActivityRank
