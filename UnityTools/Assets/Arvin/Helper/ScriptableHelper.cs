@@ -79,5 +79,19 @@ namespace Arvin
 
             return importInfo;
         }
+
+        public static OptimizastionSetting GetOptimizastionSetting()
+        {
+            string file = getFilePath("OptimizastionSetting.asset");
+            var setting = AssetDatabase.LoadAssetAtPath<OptimizastionSetting>(file);
+            if ( setting == null)
+            {
+                setting = ScriptableObject.CreateInstance<OptimizastionSetting>();
+                AssetDatabase.CreateAsset(setting,file);
+                AssetDatabase.SaveAssets();
+            }
+
+            return setting;
+        }
     }
 }

@@ -61,13 +61,14 @@
      <Compile Include="Assets\Arvin\Animator\AnimatorMenu.cs" />
      <Compile Include="Assets\Arvin\Audio\AudioMenu.cs" />
      <Compile Include="Assets\Arvin\Audio\Optimization\SoundOptimization.cs" />
-     <Compile Include="Assets\Arvin\CommandCheckerHelper.cs" />
      <Compile Include="Assets\Arvin\Helper\ModelAnimtorHelper.cs" />
      <Compile Include="Assets\Arvin\Helper\ScriptableHelper.cs" />
      <Compile Include="Assets\Arvin\Helper\UnrealBar.cs" />
      <Compile Include="Assets\Arvin\Material\MaterialMenu.cs" />
+     <Compile Include="Assets\Arvin\OptimizastionSetting.cs" />
+     <Compile Include="Assets\Arvin\Particles\GameObjectOptimizastion.cs" />
      <Compile Include="Assets\Arvin\Particles\ParticleMenu.cs" />
-     <Compile Include="Assets\Arvin\TextureHelper.cs" />
+     <Compile Include="Assets\Arvin\SelfRuleRes.cs" />
      <Compile Include="Assets\Arvin\Textures\Optimization\TextureOptimization.cs" />
      <Compile Include="Assets\Arvin\Textures\TextureMenu.cs" />
      <Compile Include="Assets\Arvin\Textures\Viewer\Editor\Data\EnumDefine.cs" />

@@ -9,44 +9,24 @@ namespace Arvin
     {
         public List<AudioRules> SoundRules = new List<AudioRules>();
         private SelfRuleRes selfRuleRes;
+        private OptimizastionSetting setting;
+        
+        private void OnValidate()
+        {
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
+        }
 
         private void OnEnable()
         {
             selfRuleRes = ScriptableHelper.GetSelfRuleRes();
+            setting = ScriptableHelper.GetOptimizastionSetting();
         }
         public void CreateDefaultRule()
         {
-            SoundRules.Add(new AudioRules()
-            {
-                length = 5,
-                start = 0,
-                Setting = new AudioRuleSetting()
-                {
-                    forceToMono = true,
-                    Ambisonic = false,
-                    loadBackground = false,
-                    loadType = AudioClipLoadType.DecompressOnLoad,
-                    compression = AudioCompressionFormat.ADPCM,
-                    sampleRate = AudioSampleRateSetting.PreserveSampleRate,
-                    Rate = SampleRate.HZ_11025
-                },
-            });
-
-            SoundRules.Add(new AudioRules()
-            {
-                length = 100000,
-                start = 5,
-                Setting = new AudioRuleSetting()
-                {
-                    forceToMono = true,
-                    Ambisonic = false,
-                    loadBackground = false,
-                    loadType = AudioClipLoadType.Streaming,
-                    compression = AudioCompressionFormat.Vorbis,
-                    sampleRate = AudioSampleRateSetting.OverrideSampleRate,
-                    Rate = SampleRate.HZ_8000
-                },
-            });
+            SoundRules.Add(setting.DefaultAudioClipFormat);
+            SoundRules.Add(setting.DefaultMusicFormat);
         }
 
         public void Run()

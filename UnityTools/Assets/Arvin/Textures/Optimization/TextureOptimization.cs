@@ -8,13 +8,20 @@ namespace Arvin
     public class TextureOptimization : ScriptableObject
     {
         public List<TextureFolderData> TextureOptimizations = new List<TextureFolderData>();
-        public bool DisableMinMap = true;
-
         private SelfRuleRes selfRuleRes;
+        private OptimizastionSetting setting;
 
         public void OnEnable()
         {
             selfRuleRes = ScriptableHelper.GetSelfRuleRes();
+            setting = ScriptableHelper.GetOptimizastionSetting();
+        }
+
+        private void OnValidate()
+        {
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
         }
 
         /// <summary>
@@ -28,9 +35,9 @@ namespace Arvin
             {
                 TextureOptimizations.Add(new TextureFolderData()
                 {
-                    Compression = TextureImporterFormat.ASTC_RGBA_6x6,
-                     Path = path,
-                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
+                    Compression = setting.DefaultFormat,
+                    Path = path,
+                    Platform = TextureFolderData.OptimizationPlatform.Android_iOS
                 });
             }
         }
@@ -86,7 +93,7 @@ namespace Arvin
                 TextureImporter importer = (TextureImporter) AssetImporter.GetAtPath(path);
                 importer.mipmapEnabled = false;
                 importer.filterMode = FilterMode.Bilinear;
-                importer.mipmapEnabled = !DisableMinMap;
+                importer.mipmapEnabled = !setting.CloseMipMap;
 
                 switch (platform)
                 {
@@ -139,11 +146,7 @@ namespace Arvin
         }
 
         public string Path;
-
-        //[LabelText("优化平台")]
         public OptimizationPlatform Platform = OptimizationPlatform.Android_iOS;
-
-        //[LabelText("压缩格式")] 
         public TextureImporterFormat Compression = TextureImporterFormat.ASTC_RGBA_6x6;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using Arvin;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,23 +8,22 @@ public class ModelAnimtorHelper
 {
     public static void ClearMesh(string guid)
     {
+        var setting = ScriptableHelper.GetOptimizastionSetting();
         string path = AssetDatabase.GUIDToAssetPath(guid);
         ModelImporter import = (ModelImporter) AssetImporter.GetAtPath(path);
-        import.importCameras = false;
-        import.importLights = false;
-        import.optimizeMesh = true;
-        import.importMaterials = false;
-
-        import.meshCompression = ModelImporterMeshCompression.Off;
-        import.animationCompression = ModelImporterAnimationCompression.Optimal;
-        import.importTangents = ModelImporterTangents.None;
-        import.importNormals = ModelImporterNormals.Import;
-
-        import.isReadable = false;
-        import.generateSecondaryUV = false;
+        import.importCameras = setting.ImportCameras;
+        import.importLights = setting.ImportLights;
+        import.optimizeMesh = setting.OptimizeMesh;
+        import.importMaterials = setting.ImportMaterials;
+        import.meshCompression = setting.MeshCompression;
+        import.animationCompression = setting.AnimationCompression; // ModelImporterAnimationCompression.Optimal;
+        import.importTangents = setting.ImportTangents; //ModelImporterTangents.None;
+        import.importNormals = setting.ImportNormals; //ModelImporterNormals.Import;
+        import.isReadable = setting.IsReadable;
+        import.generateSecondaryUV = setting.GenerateSecondaryUV;
         import.SaveAndReimport();
     }
-    
+
     public static void CheckAnimation()
     {
         try
@@ -69,6 +69,7 @@ public class ModelAnimtorHelper
     //移除scale
     public static void RemoveAnimationCurve(GameObject _obj)
     {
+        var setting = ScriptableHelper.GetOptimizastionSetting();
         List<AnimationClip> tAnimationClipList = new List<AnimationClip>(AnimationUtility.GetAnimationClips(_obj));
         if (tAnimationClipList.Count == 0)
         {
@@ -77,14 +78,21 @@ public class ModelAnimtorHelper
             tAnimationClipList.AddRange(tObjectList);
         }
 
+        if (setting.IsRemoveAnimScale)
+        {
+            foreach (AnimationClip animClip in tAnimationClipList)
+            {
+                RemoveScale(animClip);
+            }
+        }
+
         foreach (AnimationClip animClip in tAnimationClipList)
         {
             CompressAnimationClip(animClip);
         }
     }
 
-    //压缩精度移除scale
-     static void CompressAnimationClip(AnimationClip theAnimation)
+    static void RemoveScale(AnimationClip theAnimation)
     {
         try
         {
@@ -97,7 +105,18 @@ public class ModelAnimtorHelper
                     AnimationUtility.SetEditorCurve(theAnimation, theCurveBinding, null);
                 }
             }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(string.Format("CompressAnimationClip Failed !!! error: {0}", e));
+        }
+    }
 
+    //压缩精度移除scale
+    static void CompressAnimationClip(AnimationClip theAnimation)
+    {
+        try
+        {
             //浮点数精度压缩到f3
             AnimationClipCurveData[] curves = null;
 #pragma warning disable CS0618 // 类型或成员已过时
