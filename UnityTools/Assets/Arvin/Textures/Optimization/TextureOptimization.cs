@@ -42,6 +42,16 @@ namespace Arvin
             }
         }
 
+        public void UpdateTextureSetting(TextureImporterFormat format,
+            TextureFolderData.OptimizationPlatform platform = TextureFolderData.OptimizationPlatform.Android_iOS)
+        {
+            foreach (var data in TextureOptimizations)
+            {
+                data.Platform = platform;
+                data.Compression = format;
+            }
+        }
+
         /// <summary>
         ///  从统一处理列表里删除，这里穿的是文件夹，不是具体文件
         /// </summary>
@@ -88,7 +98,7 @@ namespace Arvin
             string path = AssetDatabase.GUIDToAssetPath(guid);
             string suffix = path.ToLower();
             if (suffix.EndsWith(".png") || suffix.EndsWith(".tga") || suffix.EndsWith(".jpg") ||
-                suffix.EndsWith(".psd"))
+                suffix.EndsWith(".psd") || suffix.EndsWith(".jpeg"))
             {
                 TextureImporter importer = (TextureImporter) AssetImporter.GetAtPath(path);
                 importer.mipmapEnabled = false;

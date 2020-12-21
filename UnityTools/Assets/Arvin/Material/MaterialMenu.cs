@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -10,7 +11,18 @@ public class MaterialMenu : Editor
     [MenuItem("Kunpo/优化工具/清理/材质球属性")]
     public static void Run()
     {
-        ClearMaterialProperty();
+        try
+        {
+            ClearMaterialProperty();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("清理材质球属性的时候 抓到错误：" + e);
+        }
+        finally
+        {
+            EditorUtility.ClearProgressBar();
+        }
     }
 
     public static void ClearMaterialProperty()

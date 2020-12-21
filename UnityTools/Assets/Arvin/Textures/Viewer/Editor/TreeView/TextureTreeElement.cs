@@ -1,5 +1,4 @@
-﻿
-namespace TextureTool
+﻿namespace TextureTool
 {
     using System;
     using System.Collections.Generic;
@@ -11,17 +10,19 @@ namespace TextureTool
     {
         private ulong textureByteLength = 0;
         private string textureDataSizeText = "";
-        public string AssetPath { get; set; } 
-        public string AssetName { get; set; } 
-        public ulong TextureByteLength => textureByteLength; 
+        public string AssetPath { get; set; }
+        public string AssetName { get; set; }
+        public ulong TextureByteLength => textureByteLength;
         public string TextureDataSizeText => textureDataSizeText;
-        public Texture2D Texture { get; set; } 
-        public TextureImporter TextureImporter { get; set; } 
-        public  TextureImporterFormat TextureImporterFormat { get; set; }
-        public int Index { get; set; } 
-        public TextureTreeElement Parent { get; private set; } 
-        public List<TextureTreeElement> Children { get; } = new List<TextureTreeElement>(); 
-        
+        public Texture2D Texture { get; set; }
+        public TextureImporter TextureImporter { get; set; }
+        public TextureImporterFormat TextureImporterFormat { get; set; }
+
+        public int Reference { get; set; }
+        public int Index { get; set; }
+        public TextureTreeElement Parent { get; private set; }
+        public List<TextureTreeElement> Children { get; } = new List<TextureTreeElement>();
+
         public GUIStyle GetLabelStyle(EHeaderColumnId id)
         {
             GUIStyle labelStyle = MyStyle.DefaultLabel;
@@ -35,18 +36,21 @@ namespace TextureTool
                     {
                         labelStyle = MyStyle.RedLabel;
                     }
+
                     break;
                 case EHeaderColumnId.MaxSize:
                     if (TextureImporter.maxTextureSize > ToolConfig.RedMaxTextureSize)
                     {
                         labelStyle = MyStyle.RedLabel;
                     }
+
                     break;
                 case EHeaderColumnId.GenerateMips:
                     if (TextureImporter.mipmapEnabled == true)
                     {
                         labelStyle = MyStyle.RedLabel;
                     }
+
                     break;
                 case EHeaderColumnId.AlphaIsTransparency:
                     break;
@@ -63,9 +67,10 @@ namespace TextureTool
                             labelStyle = MyStyle.DefaultLabel;
                             break;
                     }
+
                     break;
                 case EHeaderColumnId.DataSize:
-                    switch ((int)TextureByteLength)
+                    switch ((int) TextureByteLength)
                     {
                         case int len when len > ToolConfig.RedDataSize:
                             labelStyle = MyStyle.RedLabel;
@@ -77,12 +82,30 @@ namespace TextureTool
                             labelStyle = MyStyle.DefaultLabel;
                             break;
                     }
-                    break;
 
+                    break;
+                case EHeaderColumnId.TextureCompress:
+                    break;
+                case EHeaderColumnId.TextureReference:
+                    if (Reference <= 5)
+                    {
+                        labelStyle = MyStyle.DefaultLabel;
+                    }
+                    else if (Reference > 5 && Reference < 10)
+                    {
+                        labelStyle = MyStyle.YellowLabel;
+                    }
+                    else
+                    {
+                        labelStyle = MyStyle.RedLabel;
+                    }
+
+                    break;
             }
+
             return labelStyle;
         }
-        
+
         public object GetDisplayData(EHeaderColumnId id)
         {
             switch (id)
@@ -107,7 +130,7 @@ namespace TextureTool
                     return -1;
             }
         }
-        
+
         public string GetDisplayText(EHeaderColumnId id)
         {
             switch (id)
@@ -128,17 +151,21 @@ namespace TextureTool
                     return $"{Texture.width}x{Texture.height}";
                 case EHeaderColumnId.DataSize:
                     return textureDataSizeText;
+                case EHeaderColumnId.TextureCompress:
+                    return TextureImporterFormat.ToString();
+                case EHeaderColumnId.TextureReference:
+                    return Reference.ToString();
                 default:
                     return "---";
             }
         }
-        
+
         public void UpdateDataSize()
         {
-            textureByteLength = (Texture != null) ? (ulong)Texture?.GetRawTextureData().Length : 0;
+            textureByteLength = (Texture != null) ? (ulong) Texture?.GetRawTextureData().Length : 0;
             textureDataSizeText = Utils.ConvertToHumanReadableSize(textureByteLength);
         }
-        
+
         internal void AddChild(TextureTreeElement child)
         {
             if (child.Parent != null)
@@ -149,7 +176,7 @@ namespace TextureTool
             Children.Add(child);
             child.Parent = this;
         }
-        
+
         public void RemoveChild(TextureTreeElement child)
         {
             if (Children.Contains(child))
@@ -168,14 +195,15 @@ namespace TextureTool
                     return false;
                 }
             }
+
             return true;
         }
-        
+
         private bool DoesItemMatchSearchInternal(SearchState[] searchStates, int columnIndex)
         {
             var searchState = searchStates[columnIndex];
 
-            return searchState.DoesItemMatch((EHeaderColumnId)columnIndex, this);
+            return searchState.DoesItemMatch((EHeaderColumnId) columnIndex, this);
         }
     }
 }

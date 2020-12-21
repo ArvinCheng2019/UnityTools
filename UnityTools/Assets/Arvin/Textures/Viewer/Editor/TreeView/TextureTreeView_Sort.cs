@@ -2,6 +2,7 @@
 * Texture Viewer
 * @ 2019 RNGTM
 ***********************************************************************************/
+
 namespace TextureTool
 {
     using System;
@@ -24,6 +25,8 @@ namespace TextureTool
             EHeaderColumnId.AlphaIsTransparency,
             EHeaderColumnId.TextureSize,
             EHeaderColumnId.DataSize,
+            EHeaderColumnId.TextureCompress,
+            EHeaderColumnId.TextureReference
         };
 
         // ソートに使用する使うデータの取得
@@ -35,8 +38,10 @@ namespace TextureTool
             l => l.TextureImporter.maxTextureSize, // max size
             l => l.TextureImporter.mipmapEnabled, // generate mip maps
             l => l.TextureImporter.alphaIsTransparency,
-            l => l.Texture.width* l.Texture.width, // Texture Size
+            l => l.Texture.width * l.Texture.width, // Texture Size
             l => l.TextureByteLength, // Data Size
+            l => l.TextureImporterFormat,
+            l => l.Reference,
         };
 
         public void TreeToList(TreeViewItem root, IList<TreeViewItem> result)
@@ -115,7 +120,7 @@ namespace TextureTool
                 EHeaderColumnId sortOption = sortOptions[sortedColumns[i]];
                 bool ascending = multiColumnHeader.IsSortedAscending(sortedColumns[i]);
 
-                var sortSelector = sortSelectors[(int)sortOption];
+                var sortSelector = sortSelectors[(int) sortOption];
                 orderedQuery = orderedQuery.ThenBy(l => sortSelector(l.data), ascending);
             }
 
@@ -124,11 +129,12 @@ namespace TextureTool
                 .ToList();
         }
 
-        private IOrderedEnumerable<TextureTreeViewItem> InitialOrder(IEnumerable<TextureTreeViewItem> elements, int[] history)
+        private IOrderedEnumerable<TextureTreeViewItem> InitialOrder(IEnumerable<TextureTreeViewItem> elements,
+            int[] history)
         {
             EHeaderColumnId sortOption = sortOptions[history[0]];
             bool ascending = multiColumnHeader.IsSortedAscending(history[0]);
-            var sortSelector = sortSelectors[(int)sortOption];
+            var sortSelector = sortSelectors[(int) sortOption];
             return elements.Order(l => sortSelector(l.data), ascending);
         }
     }

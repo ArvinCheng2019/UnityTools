@@ -82,7 +82,7 @@ namespace Arvin
             foreach (var obj in objs)
             {
                 string path = AssetDatabase.GetAssetPath(obj);
-                selfRule.AddToSelfRule(path,obj);
+                selfRule.AddToSelfRule(path, obj);
             }
 
             EditorUtility.SetDirty(selfRule);
@@ -97,7 +97,7 @@ namespace Arvin
             foreach (var obj in objs)
             {
                 string path = AssetDatabase.GetAssetPath(obj);
-                selfRule.RemoveSelfRule(path,obj);
+                selfRule.RemoveSelfRule(path, obj);
             }
 
             EditorUtility.SetDirty(selfRule);
@@ -111,7 +111,7 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Kunpo/优化工具 /图片/图片查看器 &T")]
+        [MenuItem("Kunpo/优化工具 /图片查看器 &T")]
         private static void OpenWindow()
         {
             var window = GetWindow<TextureViewerWindow>();

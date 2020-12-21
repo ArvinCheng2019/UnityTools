@@ -2,6 +2,7 @@
 * Texture Viewer
 * @ 2019 RNGTM
 ***********************************************************************************/
+
 namespace TextureTool
 {
     /** ********************************************************************************
@@ -17,6 +18,7 @@ namespace TextureTool
         AlphaIsTransparency,
         TextureSize,
         DataSize,
-        TextureCompress,
+        TextureCompress, // 图片压缩格式
+        TextureReference, //引用计数
     }
 }

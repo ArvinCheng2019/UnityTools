@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine.UI;
+
 namespace TextureTool
 {
     using System.Linq;
@@ -14,15 +15,15 @@ namespace TextureTool
         public static readonly string defaultSearchString = "HOGE";
         private static readonly TextAnchor fieldLabelAnchor = TextAnchor.MiddleLeft;
 
-        private Texture2D prefabIconTexture = null; 
-        private TextureTreeElement[] baseElements = new TextureTreeElement[0]; 
+        private Texture2D prefabIconTexture = null;
+        private TextureTreeElement[] baseElements = new TextureTreeElement[0];
 
         public bool IsInitialized => isInitialized;
         public bool IsEmpty => baseElements.Length == 0;
         public int ElementCount => baseElements.Length;
-        
+
         public TextureTreeView(TextureTreeViewState state, TextureColumnHeaderState headerState)
-        : base(new TextureTreeViewState(), new TextureColumnHeader(headerState))
+            : base(new TextureTreeViewState(), new TextureColumnHeader(headerState))
         {
             showAlternatingRowBackgrounds = true; // 
             showBorder = true; // 
@@ -37,13 +38,19 @@ namespace TextureTool
                 searchField.searchChanged += CallSearchChanged;
             }
         }
-        
+
         private void DrawRowColumn(RowGUIArgs args, Rect rect, int columnIndex)
         {
-            if (args.item.id < 0) { return; }  
+            if (args.item.id < 0)
+            {
+                return;
+            }
 
             TextureTreeElement element = baseElements[args.item.id];
-            if (element == null) { return; }
+            if (element == null)
+            {
+                return;
+            }
 
             var texture = element.Texture;
             var textureImporter = element.TextureImporter;
@@ -55,7 +62,7 @@ namespace TextureTool
 
             //GUIStyle labelStyle = EditorStyles.label;
             GUIStyle labelStyle = EditorStyles.label;
-            switch ((EHeaderColumnId)columnIndex)
+            switch ((EHeaderColumnId) columnIndex)
             {
                 case EHeaderColumnId.TextureName:
                     rect.x += 2f;
@@ -70,19 +77,19 @@ namespace TextureTool
                     EditorGUI.LabelField(labelRect, args.label);
                     break;
                 default:
-                    var text = element.GetDisplayText((EHeaderColumnId)columnIndex);
-                    var style = element.GetLabelStyle((EHeaderColumnId)columnIndex);
+                    var text = element.GetDisplayText((EHeaderColumnId) columnIndex);
+                    var style = element.GetLabelStyle((EHeaderColumnId) columnIndex);
                     EditorGUI.LabelField(rect, text, style);
                     break;
             }
         }
-        
+
         public void Clean()
         {
             baseElements = new TextureTreeElement[0];
             Reload();
         }
-        
+
         protected override void KeyEvent()
         {
             base.KeyEvent();
@@ -91,21 +98,30 @@ namespace TextureTool
             if (e.type == EventType.KeyDown && e.keyCode == KeyCode.Return) // 
             {
                 var selection = this.GetSelection();
-                if (selection.Count == 0) { return; }
+                if (selection.Count == 0)
+                {
+                    return;
+                }
 
                 int id = selection.ElementAt(0);
-                if (id < 0) { return; }
+                if (id < 0)
+                {
+                    return;
+                }
 
                 var path = baseElements[id].AssetPath;
                 var prefab = AssetDatabase.LoadAssetAtPath(path, typeof(UnityEngine.Object));
                 AssetDatabase.OpenAsset(prefab);
             }
         }
-        
+
         protected override void SelectionChanged(IList<int> selectedIds)
         {
             base.SelectionChanged(selectedIds);
-            if (selectedIds.Count == 0) { return; }
+            if (selectedIds.Count == 0)
+            {
+                return;
+            }
 
             //selectedIds = selectedIds.Distinct().ToArray();
 
@@ -120,7 +136,7 @@ namespace TextureTool
             Selection.objects = objects;
             EditorGUIUtility.PingObject(objects[objects.Length - 1]); // 強調表示
         }
-        
+
         protected override void DoubleClickedItem(int id)
         {
             base.DoubleClickedItem(id);
@@ -179,8 +195,12 @@ namespace TextureTool
                 var textureHeaderState = this.multiColumnHeader.state as TextureColumnHeaderState;
                 for (int i = 0; i < ToolConfig.HeaderColumnNum; i++)
                 {
-                    if (!textureHeaderState.SearchStates[i].HasValue) { return true; }
+                    if (!textureHeaderState.SearchStates[i].HasValue)
+                    {
+                        return true;
+                    }
                 }
+
                 return false;
             }
         }
@@ -225,7 +245,7 @@ namespace TextureTool
         protected override TreeViewItem BuildRoot()
         {
             // BuildRootではRootだけを返す
-            return new TextureTreeViewItem { id = -1, depth = -1, displayName = "Root" };
+            return new TextureTreeViewItem {id = -1, depth = -1, displayName = "Root"};
         }
 
         /** ********************************************************************************
@@ -233,7 +253,7 @@ namespace TextureTool
         ***********************************************************************************/
         private TreeViewItem CreateTreeViewItem(TextureTreeElement model)
         {
-            return new TextureTreeViewItem { id = model.Index, displayName = model.AssetName };
+            return new TextureTreeViewItem {id = model.Index, displayName = model.AssetName};
         }
 
         /** ********************************************************************************
@@ -246,12 +266,17 @@ namespace TextureTool
             for (int i = 0; i < baseElements.Length; i++)
             {
                 var path = AssetDatabase.GetAssetPath(textures[i]);
+                int maxSize = 0;
+                TextureImporterFormat format;
+                importers[i].GetPlatformTextureSettings("android", out maxSize, out format);
                 baseElements[i] = new TextureTreeElement
                 {
                     AssetPath = path,
                     AssetName = System.IO.Path.GetFileNameWithoutExtension(path),
                     Texture = textures[i],
                     TextureImporter = importers[i],
+                    TextureImporterFormat = format,
+                    Reference = GetTextureReference(textures[i]),
                 };
             }
 
@@ -261,6 +286,58 @@ namespace TextureTool
                 element.Index = i;
                 element.UpdateDataSize();
             }
+        }
+
+        public int GetTextureReference(Texture2D texture2D)
+        {
+            int TargetGuid = texture2D.GetInstanceID();
+            string[] prefabs = AssetDatabase.FindAssets("t:Prefab");
+            int refence = 0;
+            foreach (var prefabGUID in prefabs)
+            {
+                string prefabPath = AssetDatabase.GUIDToAssetPath(prefabGUID);
+                GameObject go = (GameObject) AssetDatabase.LoadAssetAtPath(prefabPath, typeof(GameObject));
+                Image[] images = go.GetComponentsInChildren<Image>();
+                Renderer[] renderers = go.GetComponentsInChildren<Renderer>();
+                int length = images.Length + renderers.Length;
+                if (length == 0)
+                {
+                    continue;
+                }
+
+                foreach (var singleImage in images)
+                {
+                    Texture t = singleImage.mainTexture;
+                    if (t != null)
+                    {
+                        int tmpId = t.GetInstanceID();
+                        if (tmpId != TargetGuid)
+                            continue;
+                        refence++;
+                    }
+                }
+            }
+
+            string[] allMaterials = AssetDatabase.FindAssets("t:Material");
+            foreach (var matGUID in allMaterials)
+            {
+                string matPath = AssetDatabase.GUIDToAssetPath(matGUID);
+                Material mat = AssetDatabase.LoadAssetAtPath<Material>(matPath);
+                if (mat == null)
+                {
+                    continue;
+                }
+
+                if (mat.mainTexture == null)
+                    continue;
+
+                int tmpID = mat.mainTexture.GetInstanceID();
+                if (tmpID != TargetGuid)
+                    continue;
+                refence++;
+            }
+
+            return refence;
         }
 
         /** ********************************************************************************

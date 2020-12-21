@@ -7,32 +7,36 @@ public class OptimizastionWindow : EditorWindow
 {
     private static OptimizastionSetting setting;
     private Editor editor;
+
     [MenuItem("Kunpo/优化工具/默认设置窗口")]
     public static void Open()
     {
         var window = EditorWindow.GetWindow<OptimizastionWindow>(true, "OptimizastionWindow", true);
         setting = ScriptableHelper.GetOptimizastionSetting();
         window.editor = Editor.CreateEditor(setting);
-     
+
         // EditorWindow window = EditorWindow.GetWindow(typeof(OptimizastionWindow));
         // window. = Editor.CreateEditor(ScriptableObject.CreateInstance<ShowObject>());
         // window.Show();
-        
     }
 
     private void OnGUI()
     {
-        EditorGUILayout.Space(10);
+        EditorGUILayout.Space();
         GUILayout.Label("说明", EditorStyles.boldLabel);
         GUILayout.Label("以下为通用设置，除图片压缩方式，音效长度范围两项，其他的选项尽量不做修改，以下策略对加入自定义列表的资源不生效,", EditorStyles.label);
         GUILayout.Label("一定要点在最底下的保存按钮，不点不生效。", EditorStyles.boldLabel);
-        EditorGUILayout.Space(20);
+        EditorGUILayout.Space();
         this.editor.OnInspectorGUI();
-        
-        EditorGUILayout.Space(20);
-        if (GUILayout.Button("保存"))
+
+        EditorGUILayout.Space();
+        if (GUILayout.Button("保存 & 修改"))
         {
             EditorUtility.SetDirty(setting);
+            var texture = ScriptableHelper.GetTextureOptimization();
+            texture.UpdateTextureSetting(setting.Texture_DefaultFormat);
+            var sound = ScriptableHelper.GetSoundOptimization();
+            
         }
     }
 
