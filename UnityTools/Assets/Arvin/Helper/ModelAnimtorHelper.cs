@@ -11,16 +11,16 @@ public class ModelAnimtorHelper
         var setting = ScriptableHelper.GetOptimizastionSetting();
         string path = AssetDatabase.GUIDToAssetPath(guid);
         ModelImporter import = (ModelImporter) AssetImporter.GetAtPath(path);
-        import.importCameras = setting.ImportCameras;
-        import.importLights = setting.ImportLights;
-        import.optimizeMesh = setting.OptimizeMesh;
-        import.importMaterials = setting.ImportMaterials;
-        import.meshCompression = setting.MeshCompression;
-        import.animationCompression = setting.AnimationCompression; // ModelImporterAnimationCompression.Optimal;
-        import.importTangents = setting.ImportTangents; //ModelImporterTangents.None;
-        import.importNormals = setting.ImportNormals; //ModelImporterNormals.Import;
-        import.isReadable = setting.IsReadable;
-        import.generateSecondaryUV = setting.GenerateSecondaryUV;
+        import.importCameras = setting.Model_ImportCameras;
+        import.importLights = setting.Model_ImportLights;
+        import.optimizeMesh = setting.Model_OptimizeMesh;
+        import.importMaterials = setting.Model_ImportMaterials;
+        import.meshCompression = setting.Model_MeshCompression;
+        import.animationCompression = setting.Model_AnimCompression; // ModelImporterAnimationCompression.Optimal;
+        import.importTangents = setting.Model_ImportTangents; //ModelImporterTangents.None;
+        import.importNormals = setting.Model_ImportNormals; //ModelImporterNormals.Import;
+        import.isReadable = setting.Model_Readable;
+        import.generateSecondaryUV = setting.Model_GenerateSecondaryUV;
         import.SaveAndReimport();
     }
 
@@ -78,7 +78,7 @@ public class ModelAnimtorHelper
             tAnimationClipList.AddRange(tObjectList);
         }
 
-        if (setting.IsRemoveAnimScale)
+        if (setting.Anim_RemoveAnimScale)
         {
             foreach (AnimationClip animClip in tAnimationClipList)
             {

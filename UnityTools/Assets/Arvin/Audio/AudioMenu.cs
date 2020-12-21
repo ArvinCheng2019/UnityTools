@@ -7,7 +7,7 @@ namespace Arvin
     public class AudioMenu : Editor
     {
         
-        [MenuItem("Arvin/声音 /执行优化")]
+        [MenuItem("Kunpo/优化工具/声音 /执行声音优化")]
         public static void RunAudio()
         {
             var sound = ScriptableHelper.GetSoundOptimization();

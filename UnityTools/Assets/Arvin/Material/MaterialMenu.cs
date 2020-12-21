@@ -7,7 +7,7 @@ public class MaterialMenu : Editor
 {
     private static Dictionary<string, List<string>> ClearMatProperty = null;
 
-    [MenuItem("Arvin/清理/材质球属性")]
+    [MenuItem("Kunpo/优化工具/清理/材质球属性")]
     public static void Run()
     {
         ClearMaterialProperty();

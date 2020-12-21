@@ -35,7 +35,7 @@ namespace Arvin
             {
                 TextureOptimizations.Add(new TextureFolderData()
                 {
-                    Compression = setting.DefaultFormat,
+                    Compression = setting.Texture_DefaultFormat,
                     Path = path,
                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
                 });
@@ -93,7 +93,7 @@ namespace Arvin
                 TextureImporter importer = (TextureImporter) AssetImporter.GetAtPath(path);
                 importer.mipmapEnabled = false;
                 importer.filterMode = FilterMode.Bilinear;
-                importer.mipmapEnabled = !setting.CloseMipMap;
+                importer.mipmapEnabled = !setting.Texture_CloseMipMap;
 
                 switch (platform)
                 {

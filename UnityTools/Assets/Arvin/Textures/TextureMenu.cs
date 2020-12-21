@@ -8,7 +8,7 @@ namespace Arvin
 {
     public class TextureMenu : EditorWindow
     {
-        [MenuItem("Assets/Arvin/图片优化/添加到优化列表")]
+        [MenuItem("Assets/Kunpo/优化工具/图片优化/添加到优化列表")]
         private static void AddFolderToList()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
@@ -40,7 +40,7 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Assets/Arvin/图片优化/从优化列表删除")]
+        [MenuItem("Assets/Kunpo/优化工具/图片优化/从优化列表删除")]
         private static void DelFolderToList()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
@@ -57,7 +57,7 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Assets/Arvin/自定义/添加到自定义处理")]
+        [MenuItem("Assets/Kunpo/优化工具/自定义/添加到自定义处理")]
         private static void AddToSelfCompress()
         {
             var selfRule = ScriptableHelper.GetSelfRuleRes();
@@ -88,7 +88,7 @@ namespace Arvin
             EditorUtility.SetDirty(selfRule);
         }
 
-        [MenuItem("Assets/Arvin/自定义/从自定义列表移除")]
+        [MenuItem("Assets/Kunpo/优化工具/自定义/从自定义列表移除")]
         private static void DelFromSelfCompress()
         {
             var selfRule = ScriptableHelper.GetSelfRuleRes();
@@ -103,7 +103,7 @@ namespace Arvin
             EditorUtility.SetDirty(selfRule);
         }
 
-        [MenuItem("Arvin/图片/执行图片优化")]
+        [MenuItem("Kunpo/优化工具/图片/执行图片优化")]
         private static void RunTexureOptimization()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
@@ -111,7 +111,7 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Arvin /图片/图片查看器 &T")]
+        [MenuItem("Kunpo/优化工具 /图片/图片查看器 &T")]
         private static void OpenWindow()
         {
             var window = GetWindow<TextureViewerWindow>();

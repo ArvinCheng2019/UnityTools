@@ -25,8 +25,8 @@ namespace Arvin
         }
         public void CreateDefaultRule()
         {
-            SoundRules.Add(setting.DefaultAudioClipFormat);
-            SoundRules.Add(setting.DefaultMusicFormat);
+            SoundRules.Add(setting.AudioClip_DefaultFormat);
+            SoundRules.Add(setting.AudioClip_DefaultMusicFormat);
         }
 
         public void Run()

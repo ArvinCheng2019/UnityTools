@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class AnimatorMenu : Editor
 {
-    [MenuItem("Arvin/清理/动画精度")]
+    [MenuItem("Kunpo/优化工具/清理/动画精度")]
     public static void RunAnim()
     {
         ModelAnimtorHelper.CheckAnimation();
     }
 
-    [MenuItem("Arvin/清理/模型属性")]
+    [MenuItem("Kunpo/优化工具/清理/模型属性")]
     public static void RunModel()
     {
         string[] guids = AssetDatabase.FindAssets("t:Model");
