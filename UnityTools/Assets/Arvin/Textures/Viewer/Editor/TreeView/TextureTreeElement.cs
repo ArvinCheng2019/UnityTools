@@ -85,6 +85,16 @@
 
                     break;
                 case EHeaderColumnId.TextureCompress:
+                {
+                    if (TextureImporterFormat == TextureImporterFormat.Automatic)
+                    {
+                        labelStyle = MyStyle.RedLabel;
+                    }
+                    else
+                    {
+                        labelStyle = MyStyle.DefaultLabel;
+                    }
+                }
                     break;
                 case EHeaderColumnId.TextureReference:
                     if (Reference <= 5)

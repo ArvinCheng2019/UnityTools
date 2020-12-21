@@ -2,6 +2,7 @@
 * Texture Viewer
 * @ 2019 RNGTM
 ***********************************************************************************/
+
 namespace TextureTool
 {
     using UnityEngine;
@@ -16,6 +17,8 @@ namespace TextureTool
         public static GUIStyle DefaultLabel => EditorStyles.label;
         public static GUIStyle YellowLabel { get; private set; } // 黄色いラベル
         public static GUIStyle RedLabel { get; private set; } // 赤いラベル
+
+        public static GUIStyle GreenLabel { get; private set; }
         public static GUIStyle LoadingLabel { get; private set; } // ローディング表示ラベル
         public static GUIStyle MessageLabel { get; private set; } // ローディング表示ラベル
         public static GUIStyle TreeViewColumnHeader { get; private set; } // TreeViewのヘッダー
@@ -44,14 +47,20 @@ namespace TextureTool
             if (YellowLabel == null)
             {
                 YellowLabel = new GUIStyle(EditorStyles.label);
-                YellowLabel.normal.textColor = new Color(1f, 0.35f, 0f);
+                YellowLabel.normal.textColor = Color.yellow;
             }
 
             if (RedLabel == null)
             {
                 RedLabel = new GUIStyle(EditorStyles.label);
-                RedLabel.normal.textColor = new Color(1f, 0f, 0f);
+                RedLabel.normal.textColor = Color.red;
                 //RedLabel.fontStyle = FontStyle.Bold;
+            }
+
+            if (GreenLabel == null)
+            {
+                GreenLabel = new GUIStyle(EditorStyles.label);
+                GreenLabel.normal.textColor = Color.green;
             }
 
             if (TreeViewColumnHeader == null)
