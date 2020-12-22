@@ -14,6 +14,9 @@ namespace Arvin
         [FormerlySerializedAs("DefaultFormat")] [Tooltip("默认的图片压缩格式")]
         public TextureImporterFormat Texture_DefaultFormat = TextureImporterFormat.ASTC_6x6;
 
+        [Tooltip("默认的UI图片压缩格式")]
+        public TextureImporterFormat UI_DefaultFormat = TextureImporterFormat.ASTC_5x5;
+
         // 音效
         [FormerlySerializedAs("DefaultAudioClipFormat")] [Tooltip("默认的短音效处理")]
         public AudioRules AudioClip_DefaultFormat = new AudioRules()
