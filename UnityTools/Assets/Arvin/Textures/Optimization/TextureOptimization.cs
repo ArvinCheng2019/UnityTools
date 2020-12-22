@@ -90,6 +90,26 @@ namespace Arvin
                     index++;
                 }
             }
+            
+            foreach (var data in UIOptimizations)
+            {
+                EditorUtility.DisplayProgressBar("正在压缩UI图片", $"正在压缩{data.Path} 下的图片", 0);
+                string[] guids = AssetDatabase.FindAssets("t:Texture", new[] {data.Path});
+                int index = 0, max = guids.Length;
+                foreach (var guid in guids)
+                {
+                    string path = AssetDatabase.GUIDToAssetPath(guid);
+                    if (selfRuleRes.IsResInSelfRule(path))
+                    {
+                        continue;
+                    }
+
+                    EditorUtility.DisplayProgressBar("正在压缩UI图片", $"正在压缩{data.Path} 下的图片,压缩格式为{data.Compression}",
+                        (float) index / (float) max);
+                    compresssTexture(guid, data.Platform, data.Compression);
+                    index++;
+                }
+            }
 
             EditorUtility.ClearProgressBar();
         }
@@ -156,7 +176,7 @@ namespace Arvin
             {
                 UIOptimizations.Add(new TextureFolderData()
                 {
-                    Compression = setting.Texture_DefaultFormat,
+                    Compression = setting.UI_DefaultFormat,
                     Path = path,
                     Platform = TextureFolderData.OptimizationPlatform.Android_iOS
                 });

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvin", "Arvin.csproj", "{427FE028-D279-2523-A768-084F9EF28F99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KunpoOptimizastion", "KunpoOptimizastion.csproj", "{B6817904-99A6-EF24-D269-D65709A7CC78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{5242ADB2-C8BC-46C4-ED1C-512D835D34BD}"
 EndProject
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{427FE028-D279-2523-A768-084F9EF28F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{427FE028-D279-2523-A768-084F9EF28F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{427FE028-D279-2523-A768-084F9EF28F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{427FE028-D279-2523-A768-084F9EF28F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6817904-99A6-EF24-D269-D65709A7CC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6817904-99A6-EF24-D269-D65709A7CC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6817904-99A6-EF24-D269-D65709A7CC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6817904-99A6-EF24-D269-D65709A7CC78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5242ADB2-C8BC-46C4-ED1C-512D835D34BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5242ADB2-C8BC-46C4-ED1C-512D835D34BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5242ADB2-C8BC-46C4-ED1C-512D835D34BD}.Release|Any CPU.ActiveCfg = Release|Any CPU

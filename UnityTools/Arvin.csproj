@@ -66,6 +66,7 @@
      <Compile Include="Assets\Arvin\Helper\UnrealBar.cs" />
      <Compile Include="Assets\Arvin\Material\MaterialMenu.cs" />
      <Compile Include="Assets\Arvin\OptimizastionSetting.cs" />
+     <Compile Include="Assets\Arvin\OptimizastionWindow.cs" />
      <Compile Include="Assets\Arvin\Particles\GameObjectOptimizastion.cs" />
      <Compile Include="Assets\Arvin\Particles\ParticleMenu.cs" />
      <Compile Include="Assets\Arvin\SelfRuleRes.cs" />
@@ -90,7 +91,7 @@
      <Compile Include="Assets\Arvin\Textures\Viewer\Editor\Utils\MyExtensionMethods.cs" />
      <Compile Include="Assets\Arvin\Textures\Viewer\Editor\Utils\MyStyle.cs" />
      <Compile Include="Assets\Arvin\Textures\Viewer\Editor\Utils\UIUtils.cs" />
-     <None Include="Assets\Arvin\Arvin.asmdef" />
+     <None Include="Assets\Arvin\KunpoOptimizastion.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>

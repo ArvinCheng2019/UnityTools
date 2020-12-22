@@ -55,7 +55,7 @@ namespace Arvin
             EditorUtility.SetDirty(texture);
         }
 
-        [MenuItem("Assets/Kunpo/优化工具/图片优化", false, 3)]
+        [MenuItem("Assets/Kunpo/优化工具/添加图片到优化列表", false, 3)]
         private static void AddFolderToList()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
@@ -148,7 +148,7 @@ namespace Arvin
             EditorUtility.SetDirty(selfRule);
         }
 
-        [MenuItem("Kunpo/优化工具/图片/执行图片优化", false, 7)]
+        [MenuItem("Kunpo/优化工具/执行图片优化", false, 7)]
         private static void RunTexureOptimization()
         {
             var texture = ScriptableHelper.GetTextureOptimization();
