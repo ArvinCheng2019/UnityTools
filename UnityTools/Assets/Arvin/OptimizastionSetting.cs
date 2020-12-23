@@ -14,8 +14,7 @@ namespace Arvin
         [FormerlySerializedAs("DefaultFormat")] [Tooltip("默认的图片压缩格式")]
         public TextureImporterFormat Texture_DefaultFormat = TextureImporterFormat.ASTC_6x6;
 
-        [Tooltip("默认的UI图片压缩格式")]
-        public TextureImporterFormat UI_DefaultFormat = TextureImporterFormat.ASTC_5x5;
+        [Tooltip("默认的UI图片压缩格式")] public TextureImporterFormat UI_DefaultFormat = TextureImporterFormat.ASTC_5x5;
 
         // 音效
         [FormerlySerializedAs("DefaultAudioClipFormat")] [Tooltip("默认的短音效处理")]
@@ -88,6 +87,7 @@ namespace Arvin
 
         // 动画
         [Tooltip("移除动画的缩放系数")] public bool Anim_RemoveAnimScale = true;
+        [Tooltip("分离动画到这个目录")] public string Anim_ExportClipPath = "Assets/Res/Animations/";
 
         // 特效
         [Tooltip("特效发射的最大粒子数")] public int Effect_MaxCount = 50;
