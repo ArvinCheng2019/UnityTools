@@ -74,6 +74,11 @@ namespace Arvin
             foreach (var data in TextureOptimizations)
             {
                 EditorUtility.DisplayProgressBar("正在压缩图片", $"正在压缩{data.Path} 下的图片", 0);
+                if (data.SkinOptimization)
+                {
+                    continue;
+                }
+
                 string[] guids = AssetDatabase.FindAssets("t:Texture", new[] {data.Path});
                 int index = 0, max = guids.Length;
                 foreach (var guid in guids)
@@ -90,10 +95,15 @@ namespace Arvin
                     index++;
                 }
             }
-            
+
             foreach (var data in UIOptimizations)
             {
                 EditorUtility.DisplayProgressBar("正在压缩UI图片", $"正在压缩{data.Path} 下的图片", 0);
+                if (data.SkinOptimization)
+                {
+                    continue;
+                }
+
                 string[] guids = AssetDatabase.FindAssets("t:Texture", new[] {data.Path});
                 int index = 0, max = guids.Length;
                 foreach (var guid in guids)
@@ -228,5 +238,6 @@ namespace Arvin
         public string Path;
         public OptimizationPlatform Platform = OptimizationPlatform.Android_iOS;
         public TextureImporterFormat Compression = TextureImporterFormat.ASTC_RGBA_6x6;
+        public bool SkinOptimization = false;
     }
 }

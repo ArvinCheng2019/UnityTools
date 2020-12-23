@@ -35,7 +35,7 @@ public class ParticleMenu : Editor
         EditorUtility.SetDirty(item);
     }
 
-    [MenuItem("Kunpo/优化工具/清理/特效")]
+    [MenuItem("Kunpo/优化工具/优化特效",false ,9)]
     public static void RunMaxCount()
     {
         try
