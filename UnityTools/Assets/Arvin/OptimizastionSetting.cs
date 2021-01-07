@@ -94,6 +94,9 @@ namespace Arvin
 
         [Tooltip("当特效上当Render 是Disable 状态时，关闭发射器")]
         public bool Effect_CloseEmmit = true;
+        
+        [Tooltip("当特效上当Render 是Disable 状态时, 设置粒子发射数量")]
+        public int Effect_RenderDisableMaxCount = 0;
 
         private void OnValidate()
         {

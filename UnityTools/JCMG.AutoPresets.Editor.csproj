@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5242ADB2-C8BC-46C4-ED1C-512D835D34BD}</ProjectGuid>
+    <ProjectGuid>{06E6299C-710A-2408-DA5B-1AA1DDAEDBC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>JCMG.AutoPresets.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -58,94 +58,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\UWA\Editor\UwaProjScanLauncher.cs" />
-     <None Include="Assets\UWA\Editor\OverDraw.shader" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\AssetProcessors\AutoPresetAssetPostProcessor.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\AutoPresetConfig.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\AutoPresetMenuItems.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\Inspectors\AutoPresetConfigInspector.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\Menus\PresetContextMenus.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\Tools\AssetDatabaseTools.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\Tools\PresetTools.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\VersionConstants.cs" />
+     <Compile Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\Window\AboutWindow.cs" />
+     <None Include="Assets\Arvin\JCMG\AutoPresets\Scripts\Editor\JCMG.AutoPresets.Editor.asmdef" />
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="PsdPlugin">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Editor">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Applications/Unity/Hub/Editor/2019.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -347,6 +280,51 @@
  </Reference>
  <Reference Include="UwaProjScan-1.2.1">
  <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/UWA/Editor/UwaProjScan-1.2.1.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Graphs.Editor">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Core.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Graphs.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Antlr3.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.Core.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.Flow.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="MiscUtil">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/MiscUtil.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Platforms">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.Core.Editor">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Ionic.Zip">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
+ </Reference>
+ <Reference Include="YamlDotNet">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Core.Editor">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.State.Editor">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.State.Runtime">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Bolt.Flow.Editor">
+ <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Assets/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>/Users/xiaozhengcheng/Work/GitHub/UnityTools/UnityTools/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -711,16 +689,6 @@
  <Reference Include="Boo.Lang">
  <HintPath>/Applications/Unity/Hub/Editor/2019.4.12f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{BC705906-ED1C-EEE5-F77F-AD770A6A1468}</Project>
-      <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="KunpoOptimizastion.csproj">
-      <Project>{B6817904-99A6-EF24-D269-D65709A7CC78}</Project>
-      <Name>KunpoOptimizastion</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

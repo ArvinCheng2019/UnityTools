@@ -1,0 +1,332 @@
+{"frames": {
+
+"消灭病毒16.26序列帧_00000.png":
+{
+	"frame": {"x":1,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00002.png":
+{
+	"frame": {"x":1,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00004.png":
+{
+	"frame": {"x":1,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00006.png":
+{
+	"frame": {"x":1,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00008.png":
+{
+	"frame": {"x":1,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00010.png":
+{
+	"frame": {"x":1,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00012.png":
+{
+	"frame": {"x":153,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00014.png":
+{
+	"frame": {"x":153,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00016.png":
+{
+	"frame": {"x":153,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00018.png":
+{
+	"frame": {"x":153,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00020.png":
+{
+	"frame": {"x":153,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00022.png":
+{
+	"frame": {"x":153,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00024.png":
+{
+	"frame": {"x":305,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00026.png":
+{
+	"frame": {"x":305,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00028.png":
+{
+	"frame": {"x":305,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00030.png":
+{
+	"frame": {"x":305,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00032.png":
+{
+	"frame": {"x":305,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00034.png":
+{
+	"frame": {"x":305,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00036.png":
+{
+	"frame": {"x":457,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00038.png":
+{
+	"frame": {"x":457,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00040.png":
+{
+	"frame": {"x":457,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00042.png":
+{
+	"frame": {"x":457,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00044.png":
+{
+	"frame": {"x":457,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00046.png":
+{
+	"frame": {"x":457,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00048.png":
+{
+	"frame": {"x":609,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00050.png":
+{
+	"frame": {"x":609,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00052.png":
+{
+	"frame": {"x":609,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00054.png":
+{
+	"frame": {"x":609,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00056.png":
+{
+	"frame": {"x":609,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00058.png":
+{
+	"frame": {"x":609,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00060.png":
+{
+	"frame": {"x":761,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00062.png":
+{
+	"frame": {"x":761,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00064.png":
+{
+	"frame": {"x":761,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00066.png":
+{
+	"frame": {"x":761,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00068.png":
+{
+	"frame": {"x":761,"y":609,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00070.png":
+{
+	"frame": {"x":761,"y":761,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00072.png":
+{
+	"frame": {"x":913,"y":1,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00074.png":
+{
+	"frame": {"x":913,"y":153,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00076.png":
+{
+	"frame": {"x":913,"y":305,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"消灭病毒16.26序列帧_00078.png":
+{
+	"frame": {"x":913,"y":457,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "unitytext.png",
+	"format": "RGBA8888",
+	"size": {"w":1064,"h":912},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9b2982a01f4faf61112da0b7b7cd5a27:8ee74c4fae4b273477f53dc8eebdd46a:e08e6f81e96f0dbc8279829d80e9739d$"
+}
+}

@@ -35,7 +35,7 @@ public class ParticleMenu : Editor
         EditorUtility.SetDirty(item);
     }
 
-    [MenuItem("Kunpo/优化工具/优化特效",false ,9)]
+    [MenuItem("Kunpo/优化工具/优化特效", false, 9)]
     public static void RunMaxCount()
     {
         try
@@ -44,10 +44,11 @@ public class ParticleMenu : Editor
             int max = 0;
             EditorUtility.DisplayProgressBar("修改特效文件", "正在处理特效资源", (float) index / (float) max);
             var item = ScriptableHelper.GetGameObjectOptimizastion();
+            var setting = ScriptableHelper.GetOptimizastionSetting();
             string[] paths = item.GetParticlePaths();
             string[] guids = AssetDatabase.FindAssets("t:Prefab", paths);
-            max = guids.Length;
-            foreach (var guid in guids)
+            max = paths.Length;
+            foreach (var guid in paths)
             {
                 index++;
                 string path = AssetDatabase.GUIDToAssetPath(guid);
@@ -61,16 +62,18 @@ public class ParticleMenu : Editor
                     {
                         if (!render.enabled)
                         {
-                            main.maxParticles = 0;
-                            EditorUtility.DisplayProgressBar("修改特效文件", " 粒子的 render.enable = false, 将粒子数归零",
+                            main.maxParticles = setting.Effect_RenderDisableMaxCount;
+                            EditorUtility.DisplayProgressBar("修改特效文件",
+                                $" 粒子的 render.enable = false, 将粒子数改成{setting.Effect_RenderDisableMaxCount}",
                                 (float) index / (float) max);
                         }
                         else
                         {
-                            if (ps.main.maxParticles > 50)
+                            if (ps.main.maxParticles > setting.Effect_MaxCount)
                             {
-                                main.maxParticles = 50;
-                                EditorUtility.DisplayProgressBar("修改特效文件", "特效数大于 50，修改成50",
+                                main.maxParticles = setting.Effect_MaxCount;
+                                EditorUtility.DisplayProgressBar("修改特效文件",
+                                    $"特效数大于{setting.Effect_MaxCount}，修改成{setting.Effect_MaxCount}",
                                     (float) index / (float) max);
                             }
 

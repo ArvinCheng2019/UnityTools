@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976955158e53f4569bed4d69eef7bed1, type: 3}
+  m_Name: OptimizastionSetting
+  m_EditorClassIdentifier: 
+  Texture_CloseMipMap: 1
+  Texture_DefaultFormat: 50
+  UI_DefaultFormat: 49
+  AudioClip_DefaultFormat:
+    start: 0
+    length: 5
+    Setting:
+      forceToMono: 1
+      loadBackground: 0
+      Ambisonic: 0
+      loadType: 0
+      compression: 2
+      sampleRate: 0
+      Rate: 11025
+  AudioClip_DefaultMusicFormat:
+    start: 5
+    length: 100000
+    Setting:
+      forceToMono: 1
+      loadBackground: 0
+      Ambisonic: 0
+      loadType: 2
+      compression: 1
+      sampleRate: 2
+      Rate: 8000
+  Model_IsImportUV2: 0
+  Model_OptimizeMesh: 1
+  Model_OptimizeGameObjects: 1
+  Model_ImportMaterials: 0
+  Model_ImportCameras: 0
+  Model_ImportLights: 0
+  Model_MeshCompression: 0
+  Model_AnimCompression: 3
+  Model_ImportTangents: 2
+  Model_ImportNormals: 0
+  Model_Readable: 0
+  Model_GenerateSecondaryUV: 0
+  Anim_RemoveAnimScale: 1
+  Anim_ExportClipPath: Assets/Res/Animations/
+  Effect_MaxCount: 50
+  Effect_CloseEmmit: 1
+  Effect_RenderDisableMaxCount: 50
