@@ -42,43 +42,46 @@ public class ParticleMenu : Editor
         {
             int index = 0;
             int max = 0;
-            EditorUtility.DisplayProgressBar("修改特效文件", "正在处理特效资源", (float) index / (float) max);
+            EditorUtility.DisplayProgressBar("修改特效文件", "正在处理特效资源", (float)index / (float)max);
             var item = ScriptableHelper.GetGameObjectOptimizastion();
             var setting = ScriptableHelper.GetOptimizastionSetting();
             string[] paths = item.GetParticlePaths();
             string[] guids = AssetDatabase.FindAssets("t:Prefab", paths);
             max = paths.Length;
-            foreach (var guid in paths)
+            foreach (var guid in guids)
             {
                 index++;
                 string path = AssetDatabase.GUIDToAssetPath(guid);
                 GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                if (go == null)
+                    continue;
                 ParticleSystem[] sys = go.GetComponentsInChildren<ParticleSystem>();
                 foreach (ParticleSystem ps in sys)
                 {
                     Renderer render = ps.GetComponent<Renderer>();
                     ParticleSystem.MainModule main = ps.main;
-                    if (render != null)
+                    var emit = ps.emission;
+                    if (render != null && emit.enabled)
                     {
-                        if (!render.enabled)
+                        if (main.maxParticles > setting.Effect_MaxCount)
                         {
-                            main.maxParticles = setting.Effect_RenderDisableMaxCount;
-                            EditorUtility.DisplayProgressBar("修改特效文件",
-                                $" 粒子的 render.enable = false, 将粒子数改成{setting.Effect_RenderDisableMaxCount}",
-                                (float) index / (float) max);
-                        }
-                        else
-                        {
-                            if (ps.main.maxParticles > setting.Effect_MaxCount)
+                            if (!render.enabled)
+                            {
+                                main.maxParticles = setting.Effect_RenderDisableMaxCount;
+                                EditorUtility.DisplayProgressBar("修改特效文件",
+                                    $" 粒子的 render.enable = false, 将粒子数改成{setting.Effect_RenderDisableMaxCount}",
+                                    (float)index / (float)max);
+                            }
+                            else
                             {
                                 main.maxParticles = setting.Effect_MaxCount;
                                 EditorUtility.DisplayProgressBar("修改特效文件",
                                     $"特效数大于{setting.Effect_MaxCount}，修改成{setting.Effect_MaxCount}",
-                                    (float) index / (float) max);
-                            }
+                                    (float)index / (float)max);
 
-                            if (ps.main.maxParticles == 0)
-                                render.enabled = false;
+                                if (ps.main.maxParticles == 0)
+                                    render.enabled = false;
+                            }
                         }
                     }
                 }
