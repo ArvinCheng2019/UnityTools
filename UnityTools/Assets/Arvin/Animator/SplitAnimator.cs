@@ -28,7 +28,6 @@ public class SplitAnimator : Editor
             objects = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Unfiltered); //获取所有选中的物体
         foreach (UnityEngine.Object o in objects) //遍历选择的物体
         {
-            AnimationClip clip = new AnimationClip(); //new一个AnimationClip存放生成的AnimationClip
             string fbxPath = AssetDatabase.GetAssetPath(o);
             string[] fbxName = o.name.Split('@');
             string animName = string.Empty;
@@ -48,8 +47,17 @@ public class SplitAnimator : Editor
             }
             else
             {
+                var assetPath = tarPath + animName + ".anim";
+                var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(assetPath);
+                var existFlag = clip != null;
+                Debug.LogError(existFlag);
+                if (!existFlag)
+                {
+                    clip = new AnimationClip(); //new一个AnimationClip存放生成的AnimationClip
+                }
                 EditorUtility.CopySerialized(fbxClip, clip); //复制
-                AssetDatabase.CreateAsset(clip, tarPath + animName + ".anim"); //生成文件
+                if (!existFlag)
+                    AssetDatabase.CreateAsset(clip, assetPath); //生成文件
             }
         }
 
