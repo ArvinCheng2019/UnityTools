@@ -237,7 +237,7 @@ namespace Arvin
 
         public string Path;
         public OptimizationPlatform Platform = OptimizationPlatform.Android_iOS;
-        public TextureImporterFormat Compression = TextureImporterFormat.ASTC_RGBA_6x6;
+        public TextureImporterFormat Compression = TextureImporterFormat.ASTC_6x6;
         public bool SkinOptimization = false;
     }
 }

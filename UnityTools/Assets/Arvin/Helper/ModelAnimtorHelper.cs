@@ -14,7 +14,7 @@ public class ModelAnimtorHelper
         import.importCameras = setting.Model_ImportCameras;
         import.importLights = setting.Model_ImportLights;
         import.optimizeMesh = setting.Model_OptimizeMesh;
-        import.importMaterials = setting.Model_ImportMaterials;
+        //import.importMaterials = setting.Model_ImportMaterials;
         import.meshCompression = setting.Model_MeshCompression;
         import.animationCompression = setting.Model_AnimCompression; // ModelImporterAnimationCompression.Optimal;
         import.importTangents = setting.Model_ImportTangents; //ModelImporterTangents.None;
