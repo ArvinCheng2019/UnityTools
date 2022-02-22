@@ -1,5 +1,6 @@
 {
-    "name": "KunpoOptimizastion",
+    "name": "Arvin.EditorTools",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [
         "Editor"

@@ -51,6 +51,7 @@ MonoBehaviour:
   Model_GenerateSecondaryUV: 0
   Anim_RemoveAnimScale: 1
   Anim_ExportClipPath: Assets/Res/Animations/
+  Anim_UsingSameFolder: 1
   Effect_MaxCount: 50
   Effect_CloseEmmit: 1
   Effect_RenderDisableMaxCount: 0

@@ -12,22 +12,27 @@ public class SplitAnimator : Editor
     {
         var setting = ScriptableHelper.GetOptimizastionSetting();
         string tarPath = setting.Anim_ExportClipPath;
-        if (string.IsNullOrEmpty(tarPath))
-        {
-            EditorUtility.DisplayDialog("请设置AnimationClip的导出路径", " AnimClip的导出路径为空，请设置", "OK");
-            return;
-        }
+        bool localFolder = setting.Anim_UsingSameFolder;
 
-        string path = Application.dataPath + tarPath.Replace("Assets", "");
-        if (!Directory.Exists(path))
+        if (!localFolder)
         {
-            Directory.CreateDirectory(path);
+            if (string.IsNullOrEmpty(tarPath))
+            {
+                EditorUtility.DisplayDialog("请设置AnimationClip的导出路径", " AnimClip的导出路径为空，请设置", "OK");
+                return;
+            }
+            string path = Application.dataPath + tarPath.Replace("Assets", "");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
         }
 
         UnityEngine.Object[]
             objects = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Unfiltered); //获取所有选中的物体
         foreach (UnityEngine.Object o in objects) //遍历选择的物体
         {
+
             string fbxPath = AssetDatabase.GetAssetPath(o);
             string[] fbxName = o.name.Split('@');
             string animName = string.Empty;
@@ -47,14 +52,19 @@ public class SplitAnimator : Editor
             }
             else
             {
-                var assetPath = tarPath + animName + ".anim";
+                if (localFolder)
+                {
+                    tarPath = Path.GetDirectoryName(fbxPath);
+                }
+                var assetPath = tarPath + "/" + animName + ".anim";
+                Debug.Log("[Arvin.EditorTools_Log]: 分割动画模块，导出路径为：" + assetPath);
                 var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(assetPath);
                 var existFlag = clip != null;
-                Debug.LogError(existFlag);
                 if (!existFlag)
                 {
                     clip = new AnimationClip(); //new一个AnimationClip存放生成的AnimationClip
                 }
+
                 EditorUtility.CopySerialized(fbxClip, clip); //复制
                 if (!existFlag)
                     AssetDatabase.CreateAsset(clip, assetPath); //生成文件
