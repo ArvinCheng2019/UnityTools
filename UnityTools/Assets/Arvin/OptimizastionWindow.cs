@@ -8,7 +8,7 @@ public class OptimizastionWindow : EditorWindow
     private static OptimizastionSetting setting;
     private Editor editor;
 
-    [MenuItem("Kunpo/优化工具/默认设置窗口",false ,1)]
+    [MenuItem("Arvin/优化工具/默认设置窗口",false ,1)]
     public static void Open()
     {
         var window = EditorWindow.GetWindow<OptimizastionWindow>(true, "OptimizastionWindow", true);

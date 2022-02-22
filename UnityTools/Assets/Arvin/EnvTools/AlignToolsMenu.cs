@@ -5,7 +5,7 @@ namespace Arvin.AlignTools
 {
     public static class AlignToolsMenu
     {
-        private const string WindowMenuPath = "Kunpo/对齐工具 %#K";
+        private const string WindowMenuPath = "Arvin/对齐工具 %#K";
 
         // Creation of window
         [MenuItem(WindowMenuPath)]

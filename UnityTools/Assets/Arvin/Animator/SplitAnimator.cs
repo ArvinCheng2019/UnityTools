@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class SplitAnimator : Editor
 {
-    [MenuItem("Assets/Kunpo/常用工具/从模型里分离AnimClip")]
+    [MenuItem("Assets/Arvin/常用工具/从模型里分离AnimClip")]
     public static void Run()
     {
         var setting = ScriptableHelper.GetOptimizastionSetting();

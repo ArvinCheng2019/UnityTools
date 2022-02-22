@@ -9,7 +9,7 @@ namespace com.bt.editor
     public class SplitAtlas : MonoBehaviour
     {
 
-        [MenuItem("Tools/SplitAtlas")]
+        [MenuItem("Arvin/Tools/SplitAtlas")]
 
         public static void Split()
         {

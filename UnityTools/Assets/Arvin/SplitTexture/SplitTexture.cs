@@ -11,7 +11,7 @@ public class SplitTexture : Editor
 {
     private static List<FrameRanage> framsRange;
 
-    [MenuItem("Tools/分割图片")]
+    [MenuItem("Arvin/Tools/分割图片")]
     static void RunSplit()
     {
         framsRange = new List<FrameRanage>();

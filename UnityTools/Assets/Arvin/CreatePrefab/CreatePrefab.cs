@@ -7,7 +7,7 @@ using UnityEditor;
 public class CreatePrefab : EditorWindow
 {
 
-    [MenuItem("Kunpo/工具/CreatePrefab")]
+    [MenuItem("Arvin/工具/CreatePrefab")]
     private static void ShowWindow()
     {
         var window = GetWindow<CreatePrefab>();

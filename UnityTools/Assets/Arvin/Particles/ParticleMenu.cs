@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ParticleMenu : Editor
 {
-    [MenuItem("Assets/Kunpo/优化工具/特效/添加列表")]
+    [MenuItem("Arvin/优化工具/特效/添加列表")]
     public static void AddToList()
     {
         var item = ScriptableHelper.GetGameObjectOptimizastion();
@@ -21,7 +21,7 @@ public class ParticleMenu : Editor
         EditorUtility.SetDirty(item);
     }
 
-    [MenuItem("Assets/Kunpo/优化工具/特效/从列表移除")]
+    [MenuItem("Arvin/优化工具/特效/从列表移除")]
     public static void RemoveToList()
     {
         var item = ScriptableHelper.GetGameObjectOptimizastion();
@@ -35,7 +35,7 @@ public class ParticleMenu : Editor
         EditorUtility.SetDirty(item);
     }
 
-    [MenuItem("Kunpo/优化工具/优化特效", false, 9)]
+    [MenuItem("Arvin/优化工具/优化特效", false, 9)]
     public static void RunMaxCount()
     {
         try
