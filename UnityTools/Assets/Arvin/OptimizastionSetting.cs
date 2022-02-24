@@ -98,7 +98,7 @@ namespace Arvin
 
         // 动画
         [Tooltip("移除动画的缩放系数")] public bool Anim_RemoveAnimScale = true;
-        [Tooltip("分离动画到这个目录")] public string Anim_ExportClipPath = "Assets/Res/Animations/";
+        [Tooltip("分离动画到这个目录,如果Anim_UsingSameFolder =true,则这个不起效")] public string Anim_ExportClipPath = "Assets/Res/Animations/";
         [Tooltip("使用分离模型相同的文件夹")] public bool Anim_UsingSameFolder = true;
 
         // 特效
