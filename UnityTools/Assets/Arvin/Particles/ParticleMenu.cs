@@ -18,6 +18,7 @@ public class ParticleMenu : Editor
             item.AddToParticleList(path);
         }
 
+        
         EditorUtility.SetDirty(item);
     }
 
