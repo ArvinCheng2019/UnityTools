@@ -5,3 +5,6 @@ UnityTools/obj
 UnityTools/Logs
 UnityTools/Assets/Audio
 UnityTools/Assets/UI
+*.csproj
+UnityTools/.vs/
+*.vsconfig
