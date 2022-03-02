@@ -106,6 +106,32 @@ MonoBehaviour:
   Two: {fileID: 0}
   Three: {fileID: 0}
   Four: {fileID: 0}
+--- !u!114 &-6252549421599365571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b32ed05b1ff643b2a23ffe28c98eee7, type: 3}
+  m_Name: New
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: 584, y: -152}
+  ports:
+    keys: []
+    values: []
 --- !u!114 &-5256264146688983844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,10 +397,7 @@ MonoBehaviour:
       _node: {fileID: -3122273290052497670}
       _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: nextDialogue
-        node: {fileID: 514928317176831941}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -402,50 +425,6 @@ MonoBehaviour:
   Two: {fileID: 0}
   Three: {fileID: 0}
   Four: {fileID: 0}
---- !u!114 &-2491046721043774176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913717635f444f20a248a34dca8fcef5, type: 3}
-  m_Name: Change Attribute
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  graph: {fileID: 11400000}
-  position: {x: 56, y: -328}
-  ports:
-    keys:
-    - nextDialogue
-    values:
-    - _fieldName: nextDialogue
-      _node: {fileID: -2491046721043774176}
-      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: TaskAttribute
-        node: {fileID: 4298757101676155295}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  PlayerHp: 1
-  PlayerKnowledge: 2
-  PlayerRich: -5
-  PlayerLuck: 2
-  nextDialogue: {fileID: 0}
 --- !u!114 &-2222793559342857417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +600,6 @@ MonoBehaviour:
   nodes:
   - {fileID: 8966159779585359676}
   - {fileID: -4731414253364387336}
-  - {fileID: -2491046721043774176}
   - {fileID: -437830315758415395}
   - {fileID: -4040516482901124469}
   - {fileID: 4298757101676155295}
@@ -662,10 +640,7 @@ MonoBehaviour:
       _node: {fileID: 514928317176831941}
       _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: TaskAttribute
-        node: {fileID: -3122273290052497670}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -700,7 +675,7 @@ MonoBehaviour:
       Entry: 6
       Data: 
   graph: {fileID: 11400000}
-  position: {x: 296, y: -312}
+  position: {x: 264, y: -328}
   ports:
     keys:
     - One
@@ -750,10 +725,7 @@ MonoBehaviour:
       _node: {fileID: 4298757101676155295}
       _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: nextDialogue
-        node: {fileID: -2491046721043774176}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -774,7 +746,7 @@ MonoBehaviour:
   head: {fileID: 6489108535560368032, guid: caa0332ddfcc5564e92cd87d85fb7fa2, type: 3}
   contents: []
   UpdateAttribute: 1
-  TaskAttribute: {fileID: 0}
+  TaskAttribute: {fileID: 11400000, guid: 12b7355c06415401cb93805697f1a571, type: 2}
   SendEvent: 0
   from: {fileID: 0}
   One: {fileID: 0}
@@ -847,7 +819,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -472, y: -88}
+  position: {x: -488, y: -248}
   ports:
     keys:
     - TaskAttribute
