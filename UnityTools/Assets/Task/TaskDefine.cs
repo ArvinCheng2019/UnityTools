@@ -26,7 +26,7 @@ namespace Arvin.Task
     {
     }
 
-    [System.Serializable]
+
     public class TaskAttribute
     {
         [LabelText("生命")] public float HP;

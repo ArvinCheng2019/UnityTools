@@ -1,0 +1,899 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7963245587534445332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c855babbe3f642728f920fb53c8f2c19, type: 3}
+  m_Name: Select
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TaskEvents
+      Entry: 6
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: 296, y: 360}
+  ports:
+    keys:
+    - One
+    - Two
+    - Three
+    - Four
+    - TaskAttribute
+    - from
+    values:
+    - _fieldName: One
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Two
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Three
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Four
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: TaskAttribute
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextDialogue
+        node: {fileID: -2222793559342857417}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: from
+      _node: {fileID: -7963245587534445332}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Three
+        node: {fileID: -437830315758415395}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Speaker: "\u58EB\u5175"
+  head: {fileID: 2766718246137775161, guid: caa0332ddfcc5564e92cd87d85fb7fa2, type: 3}
+  contents: []
+  UpdateAttribute: 1
+  TaskAttribute: {fileID: 0}
+  SendEvent: 0
+  from: {fileID: 0}
+  One: {fileID: 0}
+  Two: {fileID: 0}
+  Three: {fileID: 0}
+  Four: {fileID: 0}
+--- !u!114 &-5256264146688983844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c855babbe3f642728f920fb53c8f2c19, type: 3}
+  m_Name: Select
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TaskEvents
+      Entry: 6
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: 296, y: 744}
+  ports:
+    keys:
+    - One
+    - Two
+    - Three
+    - Four
+    - TaskAttribute
+    - from
+    values:
+    - _fieldName: One
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Two
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Three
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Four
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: TaskAttribute
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextDialogue
+        node: {fileID: 6557894359090705192}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: from
+      _node: {fileID: -5256264146688983844}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Four
+        node: {fileID: -437830315758415395}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Speaker: "\u6D41\u6D6A\u6C49"
+  head: {fileID: 4191122280638477151, guid: 83d0d61d6d8e63c42b74d0f3b53b9d22, type: 3}
+  contents: []
+  UpdateAttribute: 1
+  TaskAttribute: {fileID: 0}
+  SendEvent: 0
+  from: {fileID: 0}
+  One: {fileID: 0}
+  Two: {fileID: 0}
+  Three: {fileID: 0}
+  Four: {fileID: 0}
+--- !u!114 &-4731414253364387336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14aa5c9a548aa49f28f5071bba3f7b64, type: 3}
+  m_Name: Player Attribute
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -760, y: -8}
+  ports:
+    keys:
+    - nextDialogue
+    values:
+    - _fieldName: nextDialogue
+      _node: {fileID: -4731414253364387336}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TaskAttribute
+        node: {fileID: 8966159779585359676}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  PlayerHp: 25
+  PlayerKnowledge: 20
+  PlayerRich: 15
+  PlayerLuck: 30
+  nextDialogue: {fileID: 0}
+--- !u!114 &-4040516482901124469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c939067382fd4ef4bc74dcd7ab9b6f2, type: 3}
+  m_Name: End
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -456, y: 232}
+  ports:
+    keys:
+    - from
+    values:
+    - _fieldName: from
+      _node: {fileID: -4040516482901124469}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: cancel
+        node: {fileID: 8966159779585359676}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  from: {fileID: 0}
+--- !u!114 &-3122273290052497670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c855babbe3f642728f920fb53c8f2c19, type: 3}
+  m_Name: Select
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TaskEvents
+      Entry: 6
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: 296, y: 24}
+  ports:
+    keys:
+    - One
+    - Two
+    - Three
+    - Four
+    - TaskAttribute
+    - from
+    values:
+    - _fieldName: One
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Two
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Three
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Four
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: TaskAttribute
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextDialogue
+        node: {fileID: 514928317176831941}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: from
+      _node: {fileID: -3122273290052497670}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Two
+        node: {fileID: -437830315758415395}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Speaker: "\u6E14\u592B"
+  head: {fileID: 676733192238027632, guid: d1f7b8cd8d04b5146b2e3468329b1b3b, type: 3}
+  contents: []
+  UpdateAttribute: 1
+  TaskAttribute: {fileID: 0}
+  SendEvent: 0
+  from: {fileID: 0}
+  One: {fileID: 0}
+  Two: {fileID: 0}
+  Three: {fileID: 0}
+  Four: {fileID: 0}
+--- !u!114 &-2491046721043774176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913717635f444f20a248a34dca8fcef5, type: 3}
+  m_Name: Change Attribute
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: 56, y: -328}
+  ports:
+    keys:
+    - nextDialogue
+    values:
+    - _fieldName: nextDialogue
+      _node: {fileID: -2491046721043774176}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TaskAttribute
+        node: {fileID: 4298757101676155295}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  PlayerHp: 1
+  PlayerKnowledge: 2
+  PlayerRich: -5
+  PlayerLuck: 2
+  nextDialogue: {fileID: 0}
+--- !u!114 &-2222793559342857417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913717635f444f20a248a34dca8fcef5, type: 3}
+  m_Name: Change Attribute
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -120, y: 552}
+  ports:
+    keys:
+    - nextDialogue
+    values:
+    - _fieldName: nextDialogue
+      _node: {fileID: -2222793559342857417}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TaskAttribute
+        node: {fileID: -7963245587534445332}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  PlayerHp: 3
+  PlayerKnowledge: 2
+  PlayerRich: -5
+  PlayerLuck: 2
+  nextDialogue: {fileID: 0}
+--- !u!114 &-437830315758415395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c855babbe3f642728f920fb53c8f2c19, type: 3}
+  m_Name: Select
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TaskEvents
+      Entry: 6
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -168, y: -184}
+  ports:
+    keys:
+    - One
+    - Two
+    - Three
+    - Four
+    - TaskAttribute
+    - from
+    values:
+    - _fieldName: One
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: 4298757101676155295}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Two
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: -3122273290052497670}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Three
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: -7963245587534445332}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Four
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: -5256264146688983844}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: TaskAttribute
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: from
+      _node: {fileID: -437830315758415395}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: ok
+        node: {fileID: 8966159779585359676}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Speaker: "\u9009\u62E9\u804C\u4E1A"
+  head: {fileID: 0}
+  contents:
+  - "\u9009\u62E9\u804C\u4E1A"
+  UpdateAttribute: 0
+  TaskAttribute: {fileID: 0}
+  SendEvent: 0
+  from: {fileID: 0}
+  One: {fileID: 0}
+  Two: {fileID: 0}
+  Three: {fileID: 0}
+  Four: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab443fce425b64774aebab109f8c5fff, type: 3}
+  m_Name: New Task
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 8966159779585359676}
+  - {fileID: -4731414253364387336}
+  - {fileID: -2491046721043774176}
+  - {fileID: -437830315758415395}
+  - {fileID: -4040516482901124469}
+  - {fileID: 4298757101676155295}
+  - {fileID: -3122273290052497670}
+  - {fileID: 514928317176831941}
+  - {fileID: -7963245587534445332}
+  - {fileID: -2222793559342857417}
+  - {fileID: -5256264146688983844}
+  - {fileID: 6557894359090705192}
+--- !u!114 &514928317176831941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913717635f444f20a248a34dca8fcef5, type: 3}
+  m_Name: Change Attribute
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -88, y: 280}
+  ports:
+    keys:
+    - nextDialogue
+    values:
+    - _fieldName: nextDialogue
+      _node: {fileID: 514928317176831941}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TaskAttribute
+        node: {fileID: -3122273290052497670}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  PlayerHp: 3
+  PlayerKnowledge: 2
+  PlayerRich: -5
+  PlayerLuck: 2
+  nextDialogue: {fileID: 0}
+--- !u!114 &4298757101676155295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c855babbe3f642728f920fb53c8f2c19, type: 3}
+  m_Name: Select
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: TaskEvents
+      Entry: 6
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: 296, y: -312}
+  ports:
+    keys:
+    - One
+    - Two
+    - Three
+    - Four
+    - TaskAttribute
+    - from
+    values:
+    - _fieldName: One
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Two
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Three
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Four
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: TaskAttribute
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextDialogue
+        node: {fileID: -2491046721043774176}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: from
+      _node: {fileID: 4298757101676155295}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: One
+        node: {fileID: -437830315758415395}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Speaker: "\u5B66\u751F"
+  head: {fileID: 6489108535560368032, guid: caa0332ddfcc5564e92cd87d85fb7fa2, type: 3}
+  contents: []
+  UpdateAttribute: 1
+  TaskAttribute: {fileID: 0}
+  SendEvent: 0
+  from: {fileID: 0}
+  One: {fileID: 0}
+  Two: {fileID: 0}
+  Three: {fileID: 0}
+  Four: {fileID: 0}
+--- !u!114 &6557894359090705192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913717635f444f20a248a34dca8fcef5, type: 3}
+  m_Name: Change Attribute
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -120, y: 760}
+  ports:
+    keys:
+    - nextDialogue
+    values:
+    - _fieldName: nextDialogue
+      _node: {fileID: 6557894359090705192}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: TaskAttribute
+        node: {fileID: -5256264146688983844}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  PlayerHp: 3
+  PlayerKnowledge: 2
+  PlayerRich: -5
+  PlayerLuck: 2
+  nextDialogue: {fileID: 0}
+--- !u!114 &8966159779585359676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e441890c0379e46e0b3b57b8de0f78c7, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -472, y: -88}
+  ports:
+    keys:
+    - TaskAttribute
+    - ok
+    - cancel
+    values:
+    - _fieldName: TaskAttribute
+      _node: {fileID: 8966159779585359676}
+      _typeQualifiedName: Arvin.Task.PlayerAttributeNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: nextDialogue
+        node: {fileID: -4731414253364387336}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: ok
+      _node: {fileID: 8966159779585359676}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: -437830315758415395}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: cancel
+      _node: {fileID: 8966159779585359676}
+      _typeQualifiedName: Arvin.Task.BaseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: from
+        node: {fileID: -4040516482901124469}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  TaskID: 1001
+  ShowTitle: "\u5B66\u751F"
+  SpriteAddressable: qs-atlas
+  Sprite: {fileID: 21300000, guid: e95580b1c4098974b9e1dc70f7c2f69e, type: 3}
+  TaskAttribute: {fileID: 0}
+  ok: {fileID: 0}
+  cancel: {fileID: 0}

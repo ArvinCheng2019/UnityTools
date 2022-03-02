@@ -14,11 +14,34 @@ namespace Arvin.Task
         public Sprite head;
 
         [TextArea, LabelText("说话内容")] public List<string> contents;
-        [LabelText("点击确定")] public NextType nextType;
 
-        [ShowIf("nextType", NextType.OK), Output, LabelText("下一段对话")]
-        public BaseNode nextDialogue;
+
+        #region 可选项
+
+        [LabelText("修正属性")] public bool UpdateAttribute;
+
+        [ShowIf("UpdateAttribute", true), Input, LabelText("修正属性")]
+        public PlayerAttributeNode TaskAttribute;
+
+
+        [LabelText("发送消息")] public bool SendEvent = false;
+
+        [ShowIf("SendEvent", true), LabelText("消息列表")]
+        public Dictionary<TaskEventMenu, string> TaskEvents;
+
+        #endregion
+
+        #region 输入项
 
         [Input, LabelText("从那里来")] public BaseNode from;
+
+        #endregion
+
+        // #region 输出项 ,交给子类
+        //
+        // [Output, LabelText("下一段对话")]
+        // public BaseNode nextDialogue;
+        //
+        // #endregion
     }
 }

@@ -12,20 +12,18 @@ namespace Arvin.Task
         [LabelText("编辑_任务ID")] public string TaskID;
         [LabelText("开始标题")] public string ShowTitle;
 
+        [LabelText("程序用图地址"), ShowIf("Sprite"), ReadOnly]
+        public string SpriteAddressable;
+        
         [PreviewField(Alignment = ObjectFieldAlignment.Left), LabelText("开始的图片")]
         [OnValueChanged("OnSpriteValueChanged")]
         public Sprite Sprite;
-
         public void OnSpriteValueChanged()
         {
             SpriteAddressable = Sprite.name;
         }
 
-        [LabelText("程序用图地址"), ShowIf("Sprite"), ReadOnly]
-        public string SpriteAddressable;
-
-        [Input, LabelText("初始属性")] public TaskAttribute TaskAttribute;
-
+        [Input, LabelText("初始属性")] public PlayerAttributeNode TaskAttribute;
         [Output, LabelText("点击确定")] public BaseNode ok;
         [Output, LabelText("点击取消")] public BaseNode cancel;
     }
