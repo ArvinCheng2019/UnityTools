@@ -8,7 +8,7 @@ public class FindAlphaOneTexture : Editor
 {
     private static List<string> NeedDelRes;
     
-    [MenuItem("Assets/Arvin/常用工具/获取透明图片")]
+    [MenuItem("Assets/Arvin/常用工具/删除全透明的图片")]
     public static void GetAlphaOneTextures()
     {
         Object[] objects = Selection.GetFiltered(typeof(Object), SelectionMode.Assets);
