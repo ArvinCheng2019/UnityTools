@@ -113,7 +113,7 @@ public class ModelAnimtorHelper
     }
 
     //压缩精度移除scale
-    static void CompressAnimationClip(AnimationClip theAnimation)
+    public static void CompressAnimationClip(AnimationClip theAnimation)
     {
         try
         {
