@@ -21,7 +21,9 @@ public class DelEmptySprite
             for (int i = 0; i < renders.Length; i++)
             {
                 var subRender = renders[i];
-                if (subRender.sprite == null)
+                var go = subRender.gameObject;
+                int childCount = go.transform.childCount;
+                if (subRender.sprite == null && childCount == 0)
                 {
                     needDel.Add(subRender.gameObject);
                 }
